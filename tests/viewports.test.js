@@ -16,7 +16,15 @@ describe("slugFromUrl", () => {
   it("garde le chemin sans extension ni index", () => {
     expect(slugFromUrl("http://localhost:3000/a/index.html")).toBe("a");
     expect(slugFromUrl("http://localhost:3000/b/infos-pratiques.html")).toBe(
-      "b-infos-pratiques",
+      "b--infos-pratiques",
+    );
+  });
+});
+
+describe("slugFromUrl, collisions", () => {
+  it("distingue un dossier d'un tiret", () => {
+    expect(slugFromUrl("http://localhost:3000/a/b.html")).not.toBe(
+      slugFromUrl("http://localhost:3000/a-b.html"),
     );
   });
 });

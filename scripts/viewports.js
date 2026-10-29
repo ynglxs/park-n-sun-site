@@ -10,14 +10,17 @@ export const PASSES = [
   },
 ];
 
-// Transforme une URL en préfixe de fichier lisible : http://host:3000/a/infos.html → a-infos
+// Transforme une URL en préfixe de fichier lisible : http://host:3000/a/infos.html → a--infos
+// (« -- » sépare les dossiers, pour que /a/b.html et /a-b.html ne se confondent pas)
 export function slugFromUrl(url) {
   const { pathname } = new URL(url);
   const slug = pathname
     .replace(/\.html?$/, "")
     .replace(/\/index$/, "")
     .replace(/^\/+|\/+$/g, "")
-    .replace(/[^a-z0-9]+/gi, "-")
+    .split("/")
+    .map((part) => part.replace(/[^a-z0-9]+/gi, "-"))
+    .join("--")
     .toLowerCase();
   return slug || "accueil";
 }

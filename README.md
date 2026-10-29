@@ -6,6 +6,15 @@ Nouveau site du skatepark couvert Park N' Sun (La Chaux-de-Fonds).
 - Prompts de phase : [`docs/prompts/`](docs/prompts/)
 - Suivi du projet : le [wiki](../../wiki)
 
+## Installation
+
+Node 22 ou plus (la CI utilise Node 22).
+
+```bash
+npm ci
+npx playwright install chromium   # une fois, pour npm run screenshots
+```
+
 ## Commandes
 
 - `npm run lint` : html-validate, stylelint, eslint, prettier (vérification)

@@ -21,7 +21,12 @@ try {
     });
     const page = await context.newPage();
     for (const url of urls) {
-      await page.goto(url, { waitUntil: "networkidle" });
+      const response = await page.goto(url, { waitUntil: "networkidle" });
+      if (!response || !response.ok()) {
+        throw new Error(
+          `${url} : HTTP ${response ? response.status() : "sans réponse"}`,
+        );
+      }
       const path = screenshotPath(dir, url, pass);
       await page.screenshot({ path, fullPage: true });
       console.log(path);
