@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Le bowl, en hommage : Park N' Sun</title>
+    <meta
+      name="description"
+      content="Hommage au bowl de La Chaux-de-Fonds, construit par les membres de l'association Park N' Sun et aujourd'hui définitivement fermé."
+    />
+    <meta name="theme-color" content="oklch(95% 0.03 80)" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Figtree:ital,wght@0,400..800;1,400..600&display=swap"
+    />
+    <link rel="stylesheet" href="css/allumage.css" />
+    <script type="module" src="js/entete.js"></script>
+    <script type="module" src="js/puce.js"></script>
+    <script type="module" src="js/bowl.js"></script>
+  </head>
+  <body class="page-chaude">
+    <a class="evitement" href="#contenu">Aller au contenu</a>
+
+    <div class="langues">
+      <span id="langues-titre">Langue</span>
+      <ul class="langues-liste" data-langues aria-labelledby="langues-titre">
+        <li><span class="langue" aria-current="true">FR</span></li>
+      </ul>
+    </div>
+
+    <header class="entete">
+      <a
+        class="entete-logo"
+        href="index.html"
+        aria-label="Park N' Sun, accueil"
+      >
+        <img
+          src="../shared/img/2021-09-cropped-cropped-cropped-logo-pns-scaled-2-1-640.webp"
+          width="640"
+          height="195"
+          alt="The Park N' Sun association"
+        />
+      </a>
+      <button
+        class="menu-bouton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        Menu
+      </button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav-liste">
+          <li><a class="nav-lien" href="index.html">Accueil</a></li>
+          <li>
+            <a class="nav-lien" href="infos-pratiques.html">Infos pratiques</a>
+          </li>
+          <li>
+            <a class="nav-lien" href="bowl.html" aria-current="page">Le bowl</a>
+          </li>
+          <li>
+            <span class="nav-lien" aria-disabled="true"
+              >Le park <span class="nav-bientot">bientôt</span></span
+            >
+          </li>
+          <li>
+            <span class="nav-lien" aria-disabled="true"
+              >Events <span class="nav-bientot">bientôt</span></span
+            >
+          </li>
+          <li>
+            <span class="nav-lien" aria-disabled="true"
+              >Rénovation <span class="nav-bientot">bientôt</span></span
+            >
+          </li>
+          <li>
+            <span class="nav-lien" aria-disabled="true"
+              >Partenaires <span class="nav-bientot">bientôt</span></span
+            >
+          </li>
+          <li>
+            <span class="nav-lien" aria-disabled="true"
+              >Historique <span class="nav-bientot">bientôt</span></span
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu">
+      <div class="bowl-tete">
+        <p class="surtitre">Historique · Hommage</p>
+        <h1>Le bowl</h1>
+        <p class="bowl-statut">
+          Le bowl de La Chaux-de-Fonds est définitivement fermé.
+        </p>
+        <p class="chapeau">
+          Une sorte de bassin aux parois recourbées, dont le design, la
+          conception technique et la construction ont été assumés par les
+          membres de l'association.
+        </p>
+      </div>
+
+      <figure class="bowl-hero">
+        <img
+          src="../shared/img/2022-01-pns-07-1-640.webp"
+          srcset="
+            ../shared/img/2022-01-pns-07-1-640.webp   640w,
+            ../shared/img/2022-01-pns-07-1-1280.webp 1280w
+          "
+          sizes="100vw"
+          width="1280"
+          height="587"
+          alt="Le bowl terminé, vu depuis la plateforme : des courbes en bois clair bordées de margelles, deux niveaux de profondeur, des poteaux entourés de formes arrondies, sous les fenêtres du local."
+        />
+        <figcaption>Le bowl, une fois la construction terminée.</figcaption>
+      </figure>
+
+      <section class="coupe-section" aria-labelledby="titre-coupe">
+        <p class="surtitre">La courbe</p>
+        <h2 id="titre-coupe">Une forme dessinée pour ce local</h2>
+        <figure class="coupe-figure">
+          <svg class="coupe" viewBox="0 -70 1200 640" aria-hidden="true">
+            <defs>
+              <clipPath id="interieur">
+                <path
+                  d="M130 138C130 330 210 460 380 460H560C650 460 660 360 750 360H900C1010 360 1065 270 1065 150Z"
+                />
+              </clipPath>
+              <path
+                id="courbe"
+                d="M130 138C130 330 210 460 380 460H560C650 460 660 360 750 360H900C1010 360 1065 270 1065 150"
+              />
+            </defs>
+            <path
+              class="coupe-sol"
+              d="M0 126H130C130 330 210 460 380 460H560C650 460 660 360 750 360H900C1010 360 1065 270 1065 150H1200V520H0Z"
+            />
+            <g clip-path="url(#interieur)">
+              <g class="coupe-mouvante">
+                <rect
+                  class="coupe-lumiere-bord"
+                  x="100"
+                  y="128"
+                  width="1000"
+                  height="12"
+                />
+                <rect
+                  class="coupe-lumiere"
+                  x="100"
+                  y="138"
+                  width="1000"
+                  height="340"
+                />
+              </g>
+            </g>
+            <rect
+              class="coupe-poteau"
+              x="800"
+              y="-40"
+              width="26"
+              height="400"
+              rx="4"
+            />
+            <path
+              class="coupe-bois"
+              d="M0 126H118M130 138C130 330 210 460 380 460H560C650 460 660 360 750 360H900C1010 360 1065 270 1065 150M1077 138H1200"
+            />
+            <circle class="coupe-margelle" cx="124" cy="132" r="12" />
+            <circle class="coupe-margelle" cx="1071" cy="144" r="12" />
+            <text class="coupe-texte" dy="-16">
+              <textPath href="#courbe" startOffset="7%">
+                Conçu et construit par l'association
+              </textPath>
+            </text>
+            <path class="coupe-trait" d="M124 112V62M655 470V500" />
+            <text class="coupe-legende" x="20" y="44">margelles en béton</text>
+            <text class="coupe-legende" x="600" y="550" text-anchor="middle">
+              deux niveaux de profondeur
+            </text>
+            <text class="coupe-legende" x="842" y="-24">poteau du local</text>
+          </svg>
+          <figcaption class="coupe-note">
+            Coupe schématique, sans échelle. La construction était rendue
+            complexe par la déclivité du sol, les formes arrondies, notamment
+            autour des poteaux du local, le changement entre deux niveaux de
+            profondeur et l'utilisation de margelles en béton en guise de
+            bordure.
+            <span class="a-fournir"
+              >[À FOURNIR : plans ou dimensions du bowl]</span
+            >
+          </figcaption>
+        </figure>
+      </section>
+
+      <dl class="chiffres">
+        <div class="chiffre">
+          <dt>Un local annexe, réservé au bowl</dt>
+          <dd>180 <span class="chiffre-unite">m²</span></dd>
+        </div>
+        <div class="chiffre">
+          <dt>de travail, réparties sur une année</dt>
+          <dd>près de 1500 <span class="chiffre-unite">heures</span></dd>
+        </div>
+        <div class="chiffre">
+          <dt>obtenus et investis dans les installations du park et du bowl</dt>
+          <dd>près de 100’000 <span class="chiffre-unite">francs</span></dd>
+        </div>
+        <div class="chiffre">
+          <dt>
+            si les mêmes infrastructures avaient été confiées à des entreprises
+            privées
+          </dt>
+          <dd>environ 250’000 <span class="chiffre-unite">francs</span></dd>
+        </div>
+      </dl>
+
+      <section class="bowl-texte" aria-labelledby="titre-projet">
+        <h2 id="titre-projet">Un projet d’envergure</h2>
+        <p>
+          Depuis 2013, un bowl a été érigé dans un local annexe de 180 m². Comme
+          pour le skatepark, son design, sa conception technique et sa
+          construction ont été assumés par les membres de l'association Park N'
+          Sun. Le design avait été réfléchi spécifiquement pour ce local.
+        </p>
+        <p>
+          Ces infrastructures ont été réalisées bénévolement, mais avec une
+          qualité professionnelle, grâce au concours de menuisiers et de
+          serruriers membres et amis de l'association.
+        </p>
+        <p>
+          Elles ont été financées avec le soutien de la Ville de La
+          Chaux-de-Fonds, à travers le Parlement des Jeunes et le Service des
+          Sports, de la Loterie romande, de la fondation Helvetia pour la
+          Jeunesse et de plusieurs autres contributeurs privés.
+        </p>
+      </section>
+
+      <section class="frise" aria-labelledby="titre-frise">
+        <h2 class="frise-titre" id="titre-frise">Du chantier à la fermeture</h2>
+        <ol class="frise-liste">
+          <li class="etape">
+            <p class="etape-quand">Depuis 2013</p>
+            <h3>Début de la construction</h3>
+            <p>
+              <span class="a-fournir"
+                >[À FOURNIR : date de début du chantier]</span
+              >
+            </p>
+            <figure>
+              <img
+                src="../shared/img/2022-01-pns-05-640.webp"
+                width="617"
+                height="494"
+                loading="lazy"
+                alt="Le local presque vide au début du chantier : les premiers gabarits en bois des courbes sont posés contre les murs carrelés."
+              />
+              <figcaption>Début de la construction du bowl.</figcaption>
+            </figure>
+          </li>
+          <li class="etape">
+            <p class="etape-quand">Sur une année</p>
+            <h3>Près de 1500 heures de travail</h3>
+            <p>
+              Le bowl a nécessité près de 1500 heures de travail, réparties sur
+              une année.
+            </p>
+            <figure>
+              <img
+                src="../shared/img/2022-01-pns-06-640.webp"
+                srcset="
+                  ../shared/img/2022-01-pns-06-640.webp   640w,
+                  ../shared/img/2022-01-pns-06-1280.webp 1258w
+                "
+                sizes="(min-width: 1024px) 50vw, 92vw"
+                width="1258"
+                height="595"
+                loading="lazy"
+                alt="Vue d'ensemble du chantier : la charpente en bois des courbes du bowl, des membres au travail entre les poteaux."
+              />
+              <figcaption>Construction du bowl dans son ensemble.</figcaption>
+            </figure>
+          </li>
+          <li class="etape">
+            <p class="etape-quand">Le bowl est terminé</p>
+            <h3>Deux profondeurs, des margelles, des poteaux contournés</h3>
+            <figure>
+              <img
+                src="../shared/img/2022-01-pns-07-640.webp"
+                srcset="
+                  ../shared/img/2022-01-pns-07-640.webp   640w,
+                  ../shared/img/2022-01-pns-07-1280.webp 1280w
+                "
+                sizes="(min-width: 1024px) 50vw, 92vw"
+                width="1280"
+                height="587"
+                loading="lazy"
+                alt="Le bowl achevé : des courbes lisses en bois, une partie profonde et une partie moins profonde, sous la lumière des fenêtres."
+              />
+              <figcaption>La construction du bowl est terminée.</figcaption>
+            </figure>
+          </li>
+          <li class="etape">
+            <p class="etape-quand">2019</p>
+            <h3>Le skatepark en 2019</h3>
+            <figure>
+              <img
+                src="../shared/img/2022-01-pns-03-640.webp"
+                srcset="
+                  ../shared/img/2022-01-pns-03-640.webp  640w,
+                  ../shared/img/2022-01-pns-03-1280.webp 882w
+                "
+                sizes="(min-width: 1024px) 50vw, 92vw"
+                width="882"
+                height="282"
+                loading="lazy"
+                alt="Vue panoramique en 2019 : une longue courbe en bois clair, des poteaux rouges, des murs couverts de graffitis."
+              />
+              <figcaption>
+                Le skatepark de La Chaux-de-Fonds en 2019.
+              </figcaption>
+            </figure>
+          </li>
+          <li class="etape">
+            <p class="etape-quand">2021</p>
+            <h3>StreetDay : contest et jam session au bowl</h3>
+            <p>
+              Pour l'édition spéciale des 10 ans du StreetDay, l'association a
+              organisé un contest de skateboard avec cashprize au bowl.
+            </p>
+            <figure class="etape-photos">
+              <img
+                src="../shared/img/2023-03-streetdays-45-640.webp"
+                width="638"
+                height="956"
+                loading="lazy"
+                alt="Un skateur descend la paroi du bowl, observé par un autre rider accroupi sur la margelle."
+              />
+              <img
+                src="../shared/img/2023-03-streetdays-51-640.webp"
+                width="621"
+                height="932"
+                loading="lazy"
+                alt="Un skateur sur la plateforme du bowl, au-dessus de la courbe, devant les grandes fenêtres."
+              />
+              <img
+                src="../shared/img/2023-03-streetdays-50-640.webp"
+                width="640"
+                height="959"
+                loading="lazy"
+                alt="Un skateur en l'air au-dessus de la margelle du bowl, à contre-jour devant une fenêtre."
+              />
+              <img
+                src="../shared/img/2023-03-streetdays-35-640.webp"
+                width="640"
+                height="427"
+                loading="lazy"
+                alt="Un skateur glisse sur la margelle du bowl, sous l'inscription NO WAX peinte au mur."
+              />
+              <figcaption>
+                Jam session de skateboard au bowl, StreetDay 2021. Photos&nbsp;:
+                @SteveVisinand.
+              </figcaption>
+            </figure>
+          </li>
+          <li class="etape">
+            <p class="etape-quand">Rénovation</p>
+            <h3>Le bowl doit quitter son local</h3>
+            <p>
+              Le projet de rénovation prévoyait que le bowl soit enlevé du local
+              qu'il occupait, pour laisser la place à une autre affectation
+              gérée par la Ville. L'association voulait en intégrer des parties
+              au skatepark.
+            </p>
+            <p>
+              <span class="a-fournir"
+                >[À FOURNIR : parties du bowl réellement réutilisées]</span
+              >
+            </p>
+          </li>
+          <li class="etape">
+            <p class="etape-quand">Définitivement fermé</p>
+            <h3>Le bowl est démonté</h3>
+            <p>
+              <span class="a-fournir"
+                >[À FOURNIR : date exacte du démontage]</span
+              >
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="archives" aria-labelledby="titre-archives">
+        <h2 class="frise-titre" id="titre-archives">Archives</h2>
+        <p class="note">
+          <span class="a-fournir"
+            >[À FOURNIR : photos d'archive du bowl et dates]</span
+          >
+          <span class="a-fournir">[À FOURNIR : témoignages]</span>
+        </p>
+        <figure class="video">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <circle
+              cx="20"
+              cy="20"
+              r="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+            <path d="M16 13v14l11-7z" fill="currentColor" />
+          </svg>
+          <figcaption>
+            <span class="a-fournir">[À FOURNIR : vidéo de Léo]</span> Vidéo
+            d'hommage au bowl.
+          </figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="pied" aria-labelledby="titre-pied">
+      <h2 class="visually-hidden" id="titre-pied">
+        Park N' Sun : infos et contact
+      </h2>
+      <div class="pied-grille">
+        <div class="pied-bloc">
+          <a
+            class="pied-logo"
+            href="index.html"
+            aria-label="Park N' Sun, accueil"
+          >
+            <img
+              src="../shared/img/2021-09-cropped-cropped-cropped-logo-pns-scaled-2-1-640.webp"
+              width="640"
+              height="195"
+              loading="lazy"
+              alt="The Park N' Sun association"
+            />
+          </a>
+          <p class="pied-gros">me, sa, di<br />14h–18h</p>
+        </div>
+        <div class="pied-bloc">
+          <h2>Adresse</h2>
+          <address>
+            Park N' Sun<br />
+            Rue du Commerce 126<br />
+            2300 La Chaux-de-Fonds
+          </address>
+          <a
+            href="https://www.openstreetmap.org/search?query=Rue%20du%20Commerce%20126%2C%202300%20La%20Chaux-de-Fonds"
+            rel="noopener"
+            >Voir sur la carte</a
+          >
+        </div>
+        <div class="pied-bloc">
+          <h2>Suivre</h2>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/park_n_sun_/" rel="noopener"
+                >Instagram @park_n_sun_</a
+              >
+            </li>
+            <li>
+              <a href="https://www.facebook.com/park.nsun/" rel="noopener"
+                >Facebook</a
+              >
+              <span class="a-fournir">[À FOURNIR : page encore active ?]</span>
+            </li>
+          </ul>
+        </div>
+        <div class="pied-bloc">
+          <h2>Contact</h2>
+          <p>
+            Gabriel Griesser<br />
+            <a href="mailto:gabriel.griesser@hotmail.com"
+              >gabriel.griesser@hotmail.com</a
+            >
+          </p>
+          <p>
+            <span class="a-fournir">[À FOURNIR : téléphone à confirmer]</span>
+          </p>
+          <p>
+            Léo Girard, porte-parole<br />
+            <span class="a-fournir">[EMAIL/TÉL de Léo]</span>
+          </p>
+        </div>
+      </div>
+      <p class="pied-bas">
+        <span class="bientot">Partenaires (bientôt)</span>
+        <span class="bientot">Historique (bientôt)</span>
+        <span class="a-fournir"
+          >[À FOURNIR : mentions légales et protection des données]</span
+        >
+      </p>
+    </footer>
+
+    <!-- La puce : horaires, adresse et Instagram, toujours à un tap -->
+    <div class="puce" data-etat-ouvert>
+      <button
+        class="puce-bouton"
+        type="button"
+        aria-expanded="false"
+        aria-controls="puce-panneau"
+      >
+        <span class="puce-voyant" aria-hidden="true"></span>
+        <span class="puce-etat" data-etat>Horaires</span>
+        <span class="puce-resume" data-resume
+          >me, sa, di · 14h–18h · adresse, Instagram</span
+        >
+        <svg class="puce-chevron" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="m6 15 6-6 6 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <div class="puce-panneau" id="puce-panneau" hidden>
+        <h2>Venir au park</h2>
+        <dl>
+          <div>
+            <dt>Horaires</dt>
+            <dd>Mercredi, samedi, dimanche<br />14h–18h</dd>
+          </div>
+          <div>
+            <dt>Adresse</dt>
+            <dd>
+              Rue du Commerce 126, 2300 La Chaux-de-Fonds<br />
+              <a
+                href="https://www.openstreetmap.org/search?query=Rue%20du%20Commerce%20126%2C%202300%20La%20Chaux-de-Fonds"
+                rel="noopener"
+                >Voir sur la carte</a
+              >
+            </dd>
+          </div>
+          <div>
+            <dt>Instagram</dt>
+            <dd>
+              <a href="https://www.instagram.com/park_n_sun_/" rel="noopener"
+                >@park_n_sun_</a
+              >
+            </dd>
+          </div>
+        </dl>
+        <p><a href="infos-pratiques.html">Tarifs et réservation</a></p>
+      </div>
+    </div>
+  </body>
+</html>
