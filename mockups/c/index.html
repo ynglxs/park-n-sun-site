@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Park N’ Sun · skatepark couvert à La Chaux-de-Fonds</title>
+    <meta
+      name="description"
+      content="Park N’ Sun : skatepark couvert construit et géré bénévolement dans les anciens abattoirs de La Chaux-de-Fonds. Ouvert me, sa, di de 14h à 18h, Rue du Commerce 126."
+    />
+    <meta name="theme-color" content="oklch(90% 0.035 80)" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&family=Spline+Sans+Mono:wght@400..600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/atelier.css" />
+    <script type="module" src="js/page.js"></script>
+  </head>
+  <body>
+    <a class="evitement" href="#contenu">Aller au contenu</a>
+
+    <div class="marge-haute">
+      <p class="annot">Pl. 01 · Accueil</p>
+      <nav aria-label="Langue">
+        <ul class="langues" data-langues>
+          <li><span class="langue" lang="fr" aria-current="true">FR</span></li>
+          <li>
+            <span class="langue" lang="en"
+              >EN <small lang="fr">bientôt</small></span
+            >
+          </li>
+          <li>
+            <span class="langue" lang="de"
+              >DE <small lang="fr">bientôt</small></span
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="entete">
+      <a class="entete-logo" href="index.html" aria-current="page">
+        <img
+          src="img/logo-c-horizontal.svg"
+          alt="Park N’ Sun, accueil"
+          width="280"
+          height="64"
+        />
+      </a>
+      <details class="sommaire">
+        <summary>Sommaire</summary>
+        <nav aria-label="Sommaire des planches">
+          <ol>
+            <li>
+              <a href="index.html" aria-current="page"
+                ><span class="numero">Pl. 01</span> Accueil
+                <span class="etat">ici</span></a
+              >
+            </li>
+            <li>
+              <a href="infos-pratiques.html"
+                ><span class="numero">Pl. 02</span> Infos pratiques
+                <span class="etat"></span
+              ></a>
+            </li>
+            <li>
+              <a href="bowl.html"
+                ><span class="numero">Pl. 03</span> Le bowl
+                <span class="etat">3D</span></a
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Le park, cours
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Events
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Rénovation
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Partenaires
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Historique
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Contact
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+          </ol>
+        </nav>
+      </details>
+    </header>
+
+    <aside class="cartouche" aria-label="Horaires, adresse et Instagram">
+      <p class="cartouche-etat" data-etat-bloc>
+        <span data-etat>Horaires : me, sa, di · 14h–18h</span>
+      </p>
+      <dl>
+        <dt>Horaires</dt>
+        <dd>me, sa, di · 14h–18h</dd>
+        <dt>Adresse</dt>
+        <dd>
+          <a
+            href="https://www.openstreetmap.org/search?query=Rue%20du%20Commerce%20126%2C%202300%20La%20Chaux-de-Fonds"
+            >Rue du Commerce 126, 2300 La Chaux-de-Fonds</a
+          >
+        </dd>
+        <dt>Instagram</dt>
+        <dd>
+          <a href="https://www.instagram.com/park_n_sun_/">@park_n_sun_</a>
+        </dd>
+      </dl>
+      <ul class="cartouche-pied">
+        <li><b>Planche</b> 01 · Accueil</li>
+        <li><b>Date</b> 29.10.2026</li>
+        <li><b>Échelle</b> 1:1</li>
+      </ul>
+    </aside>
+
+    <div class="feuille">
+      <main id="contenu" class="planche">
+        <section class="ouverture" aria-labelledby="titre">
+          <p class="surtitre">Skatepark couvert · La Chaux-de-Fonds</p>
+          <h1 id="titre" class="titre-planche">
+            Construit à la main, par ses bénévoles.
+          </h1>
+          <p class="cote"><span>Depuis 2003</span></p>
+          <p class="chapeau">
+            Skate, trottinette freestyle, roller et BMX dans les anciens
+            abattoirs municipaux : le seul skatepark couvert du canton de
+            Neuchâtel.
+          </p>
+          <ul class="actions">
+            <li>
+              <a class="lien-outil lien-outil-fort" href="infos-pratiques.html"
+                >Horaires et tarifs</a
+              >
+            </li>
+            <li>
+              <a
+                class="lien-outil"
+                href="https://www.instagram.com/park_n_sun_/"
+                >Instagram @park_n_sun_</a
+              >
+            </li>
+            <li><a class="lien-outil" href="bowl.html">Le bowl en 3D</a></li>
+          </ul>
+
+          <figure class="vue vue-large">
+            <div class="vue-cadre">
+              <img
+                src="../shared/img/2026-04-img-9630-1280.webp"
+                srcset="
+                  ../shared/img/2026-04-img-9630-640.webp   640w,
+                  ../shared/img/2026-04-img-9630-1280.webp 1280w
+                "
+                sizes="(width >= 75rem) 60rem, 100vw"
+                width="1280"
+                height="739"
+                alt="Vue d’ensemble du skatepark rénové : grandes courbes en bois à gauche, poteaux du bâtiment, module en bois au centre et main courante rouge, sous les fenêtres cintrées des anciens abattoirs."
+              />
+              <ol class="reperes" aria-hidden="true">
+                <li class="r-courbe">A</li>
+                <li class="r-poteau">B</li>
+                <li class="r-module">C</li>
+                <li class="r-rampe">D</li>
+              </ol>
+            </div>
+            <figcaption>
+              <p>
+                <b>Vue 1</b> Le park après les rénovations (photo publiée sur le
+                site actuel en 2026).
+              </p>
+              <ul class="legende" aria-label="Repères de la vue 1">
+                <li><b>A</b> courbe</li>
+                <li><b>B</b> poteau</li>
+                <li><b>C</b> module en bois</li>
+                <li><b>D</b> main courante</li>
+              </ul>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section class="revision" aria-labelledby="reouverture">
+          <p class="revision-marque" aria-hidden="true">A</p>
+          <div>
+            <p class="surtitre">Révision · 2026</p>
+            <h2 id="reouverture">
+              Fin des rénovations et réouverture au public
+            </h2>
+          </div>
+          <div class="revision-texte">
+            <p>
+              Après des mois de rénovations, nous avons le plaisir de vous
+              annoncer que le Skatepark est de nouveau réouvert au public. Les
+              horaires restent inchangés (me, sa, di de 14h à 18h).
+            </p>
+            <p>
+              Vous pouvez suivre plus d’informations sur notre page
+              <a href="https://www.instagram.com/park_n_sun_/">Instagram</a>.
+            </p>
+          </div>
+        </section>
+
+        <section class="section association" aria-labelledby="asso">
+          <p class="surtitre">Coupe B · L’association</p>
+          <h2 id="asso">Une vingtaine de membres, un park fait main</h2>
+          <div class="association-grille">
+            <div class="association-texte">
+              <p>
+                L’association Park N’Sun a pour objectif la promotion des sports
+                de glisse urbains tels que le skateboard, le scooter
+                (trottinette freestyle), le roller ou le BMX. Elle regroupe une
+                vingtaine de membres âgés de 12 à 45 ans.
+              </p>
+              <p>
+                Pour lui permettre d’atteindre son but, les membres de
+                l’association construisent, entretiennent et gèrent bénévolement
+                un skatepark couvert dans les anciens abattoirs municipaux de La
+                Chaux-de-Fonds depuis 2003. Le skatepark Park N’Sun reste la
+                seule infrastructure couverte du canton de Neuchâtel qui leur
+                est dédiée.
+              </p>
+              <p>
+                Les modules sont en bois, construits à la main par des
+                bénévoles.
+              </p>
+            </div>
+            <div class="cote-v" aria-hidden="true">
+              <span>45 ans</span>
+              <span class="cote-v-trait"></span>
+              <span>12 ans</span>
+            </div>
+            <figure class="vue association-photo">
+              <div class="vue-cadre">
+                <img
+                  src="../shared/img/2023-03-streetdays-110-640.webp"
+                  srcset="
+                    ../shared/img/2023-03-streetdays-110-640.webp  640w,
+                    ../shared/img/2023-03-streetdays-110-1280.webp 881w
+                  "
+                  sizes="(width >= 48rem) 40vw, 100vw"
+                  width="640"
+                  height="427"
+                  alt="Une vingtaine de jeunes riders posent avec leurs trottinettes et skateboards dans le park, devant une fresque et les fenêtres cintrées du bâtiment."
+                />
+              </div>
+              <figcaption>
+                <p>
+                  <b>Vue 2</b> StreetDay 2021, au skatepark. Photo :
+                  @SteveVisinand.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section nom" aria-labelledby="nom-titre">
+          <p class="surtitre">Coupe C · L’histoire du nom</p>
+          <h2 id="nom-titre">Park’n Sun : le froid, et la lampe</h2>
+          <div class="nom-grille">
+            <div class="nom-texte">
+              <p>
+                À l’époque, le bâtiment était mal isolé. En hiver, il faisait si
+                froid que les riders grelottaient et plaisantaient qu’ils
+                avaient « Parkinson ». Au-dessus des gradins, une énorme lampe
+                chauffait fort : c’était « le soleil du skatepark ».
+              </p>
+              <p>
+                Les deux ont donné Park’n Sun. Depuis les rénovations, il fait
+                chaud même en hiver, et la lampe a disparu.
+              </p>
+              <p>
+                <span class="a-fournir"
+                  >[À FOURNIR : année et témoins de l’anecdote, photos de la
+                  lampe et des gradins]</span
+                >
+              </p>
+            </div>
+            <figure class="dessin nom-coupes">
+              <svg
+                viewBox="0 0 640 250"
+                role="img"
+                aria-labelledby="nom-svg-t nom-svg-d"
+              >
+                <title id="nom-svg-t">
+                  Deux coupes schématiques de la halle
+                </title>
+                <desc id="nom-svg-d">
+                  Avant : murs minces, gradins, une grosse lampe allumée
+                  au-dessus. Après les rénovations : murs isolés, la lampe a
+                  disparu.
+                </desc>
+                <defs>
+                  <pattern
+                    id="isolant"
+                    width="10"
+                    height="10"
+                    patternUnits="userSpaceOnUse"
+                    patternTransform="rotate(45)"
+                  >
+                    <line
+                      class="trait trait-fin trait-veinage"
+                      x1="0"
+                      y1="0"
+                      x2="0"
+                      y2="10"
+                    />
+                  </pattern>
+                </defs>
+                <!-- Avant -->
+                <g class="nom-avant">
+                  <text class="svg-annot" x="20" y="22">Avant</text>
+                  <path class="trait" d="M30 225V80L150 40L270 80V225" />
+                  <path class="trait" d="M20 225H280" />
+                  <path
+                    class="trait trait-fin"
+                    d="M44 225V200H72V180H100V160H128V225"
+                  />
+                  <text class="svg-annot" x="44" y="244">gradins</text>
+                  <line
+                    class="trait trait-fin"
+                    x1="86"
+                    y1="70"
+                    x2="86"
+                    y2="98"
+                  />
+                  <circle class="plein-sodium trait" cx="86" cy="110" r="14" />
+                  <path
+                    class="trait trait-fin trait-tirets"
+                    d="M60 132A34 34 0 0 0 112 132M50 146A48 48 0 0 0 122 146"
+                  />
+                  <text class="svg-annot" x="112" y="104">la lampe</text>
+                  <text class="svg-annot" x="258" y="140" text-anchor="end">
+                    mur mal
+                  </text>
+                  <text class="svg-annot" x="258" y="160" text-anchor="end">
+                    isolé
+                  </text>
+                </g>
+                <!-- Après -->
+                <g class="nom-apres">
+                  <text class="svg-annot" x="350" y="22">
+                    Après les rénovations
+                  </text>
+                  <path
+                    class="trait"
+                    fill="url(#isolant)"
+                    d="M360 225V80L480 40L600 80V225H588V88L480 54L372 88V225Z"
+                  />
+                  <path class="trait" d="M350 225H610" />
+                  <path
+                    class="trait trait-fin"
+                    d="M384 225V200H412V180H440V160H468V225"
+                  />
+                  <circle
+                    class="trait trait-fin trait-tirets"
+                    cx="426"
+                    cy="110"
+                    r="14"
+                  />
+                  <text class="svg-annot" x="448" y="106">lampe</text>
+                  <text class="svg-annot" x="448" y="126">retirée</text>
+                  <text class="svg-annot" x="476" y="190">isolé</text>
+                </g>
+              </svg>
+              <figcaption>
+                Schéma sans échelle : forme du bâtiment non relevée.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section portes" aria-labelledby="portes-titre">
+          <p class="surtitre">Nomenclature · Qui cherche quoi</p>
+          <h2 id="portes-titre">Par où entrer</h2>
+          <ul class="nomenclature">
+            <li>
+              <h3>Riders</h3>
+              <p>Les horaires, les prochains events et le compte Instagram.</p>
+              <ul>
+                <li>
+                  <a class="lien-outil" href="infos-pratiques.html#horaires"
+                    >Horaires</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="lien-outil"
+                    href="https://www.instagram.com/park_n_sun_/"
+                    >Instagram</a
+                  >
+                </li>
+                <li>
+                  <span class="lien-outil lien-outil-bientot"
+                    >Events · bientôt</span
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>Anciens</h3>
+              <p>L’histoire du park, du nom, et l’hommage au bowl.</p>
+              <ul>
+                <li><a class="lien-outil" href="bowl.html">Le bowl</a></li>
+                <li><a class="lien-outil" href="#nom-titre">Le nom</a></li>
+                <li>
+                  <span class="lien-outil lien-outil-bientot"
+                    >Historique · bientôt</span
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>Parents</h3>
+              <p>
+                Les cours, la sécurité et la réservation pour un anniversaire.
+              </p>
+              <ul>
+                <li>
+                  <a class="lien-outil" href="infos-pratiques.html#cours"
+                    >Cours</a
+                  >
+                </li>
+                <li>
+                  <a class="lien-outil" href="infos-pratiques.html#reservation"
+                    >Réserver le park</a
+                  >
+                </li>
+                <li>
+                  <a class="lien-outil" href="infos-pratiques.html#securite"
+                    >Sécurité</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>Ville, marques</h3>
+              <p>
+                Les partenariats, la rénovation et Capitale culturelle 2027.
+              </p>
+              <ul>
+                <li>
+                  <a class="lien-outil" href="#chantiers-titre">Projets</a>
+                </li>
+                <li>
+                  <span class="lien-outil lien-outil-bientot"
+                    >Partenaires · bientôt</span
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          class="section bowl-annonce"
+          aria-labelledby="bowl-annonce-titre"
+        >
+          <p class="surtitre">Planche 03 · Hommage</p>
+          <h2 id="bowl-annonce-titre">Le bowl, définitivement fermé</h2>
+          <p>
+            Depuis 2013, un bowl, sorte de bassin aux parois recourbées, a été
+            érigé dans un local annexe de 180 m², conçu et construit par les
+            membres de l’association. Il est définitivement fermé. Sa planche le
+            raconte en 3D, le long d’une ligne de ride.
+          </p>
+          <p>
+            <a class="lien-outil lien-outil-fort" href="bowl.html"
+              >Entrer dans le bowl</a
+            >
+          </p>
+        </section>
+
+        <section
+          class="section acier chantiers-bloc"
+          aria-labelledby="chantiers-titre"
+        >
+          <p class="surtitre">Carnet de chantier · En préparation</p>
+          <h2 id="chantiers-titre">Ce qui arrive</h2>
+          <ul class="chantiers">
+            <li>
+              <h3>Capitale culturelle 2027</h3>
+              <p>
+                Le projet des anciens abattoirs.
+                <span class="a-fournir"
+                  >[À FOURNIR : description du projet, rôle de Park N’Sun,
+                  dates, liens officiels]</span
+                >
+              </p>
+            </li>
+            <li>
+              <h3>El Tony Mate</h3>
+              <p>
+                Collaboration : El Tony Mate est vendu au skatepark.
+                <span class="a-fournir"
+                  >[À FOURNIR : nature de la collaboration, prix, visuels,
+                  accord pour le nom et le logo]</span
+                >
+              </p>
+            </li>
+            <li>
+              <h3>Partenaires</h3>
+              <p>
+                <span class="a-fournir"
+                  >[À FOURNIR : liste officielle des partenaires, logos et
+                  autorisations]</span
+                >
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="video-titre">
+          <p class="surtitre">Vue 3 · Vidéo</p>
+          <h2 id="video-titre">Le park en mouvement</h2>
+          <div class="video-vide">
+            <p>
+              <span class="a-fournir">[À FOURNIR : vidéo de Léo]</span
+              ><br />Cadre 16:9
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="pied">
+        <div class="pied-grille">
+          <div>
+            <p class="pied-logo">
+              <img
+                src="img/logo-c.svg"
+                alt="Park N’ Sun"
+                width="480"
+                height="320"
+              />
+            </p>
+            <p class="annot">Association Park N’ Sun · depuis 2003</p>
+          </div>
+          <div>
+            <h2>Venir</h2>
+            <p>Mercredi, samedi, dimanche · 14h–18h</p>
+            <p>Rue du Commerce 126, 2300 La Chaux-de-Fonds</p>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/park_n_sun_/"
+                  >Instagram @park_n_sun_</a
+                >
+              </li>
+              <li>
+                <a href="https://www.facebook.com/park.nsun/">Facebook</a> (à
+                confirmer)
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contact</h2>
+            <p>
+              Gabriel Griesser, contact actuel :
+              <a href="mailto:gabriel.griesser@hotmail.com"
+                >gabriel.griesser@hotmail.com</a
+              >
+            </p>
+            <p>
+              Léo Girard, porte-parole :
+              <span class="a-fournir">[EMAIL/TÉL de Léo]</span>
+            </p>
+            <p>
+              <span class="a-fournir">[À FOURNIR : téléphone à confirmer]</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

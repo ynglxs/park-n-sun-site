@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Infos pratiques · Park N’ Sun (maquette C)</title>
+    <meta
+      name="description"
+      content="Horaires (me, sa, di, 14h–18h), tarifs, réservation, cours et contact du skatepark Park N’ Sun, Rue du Commerce 126, La Chaux-de-Fonds."
+    />
+    <meta name="theme-color" content="oklch(90% 0.035 80)" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&family=Spline+Sans+Mono:wght@400..600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/atelier.css" />
+    <script type="module" src="js/page.js"></script>
+  </head>
+  <body>
+    <a class="evitement" href="#contenu">Aller au contenu</a>
+
+    <div class="marge-haute">
+      <p class="annot">Pl. 02 · Infos</p>
+      <nav aria-label="Langue">
+        <ul class="langues" data-langues>
+          <li><span class="langue" lang="fr" aria-current="true">FR</span></li>
+          <li>
+            <span class="langue" lang="en"
+              >EN <small lang="fr">bientôt</small></span
+            >
+          </li>
+          <li>
+            <span class="langue" lang="de"
+              >DE <small lang="fr">bientôt</small></span
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="entete">
+      <a class="entete-logo" href="index.html">
+        <img
+          src="img/logo-c-horizontal.svg"
+          alt="Park N’ Sun, accueil"
+          width="280"
+          height="64"
+        />
+      </a>
+      <details class="sommaire">
+        <summary>Sommaire</summary>
+        <nav aria-label="Sommaire des planches">
+          <ol>
+            <li>
+              <a href="index.html"
+                ><span class="numero">Pl. 01</span> Accueil
+                <span class="etat"></span
+              ></a>
+            </li>
+            <li>
+              <a href="infos-pratiques.html" aria-current="page"
+                ><span class="numero">Pl. 02</span> Infos pratiques
+                <span class="etat"></span
+              ></a>
+            </li>
+            <li>
+              <a href="bowl.html"
+                ><span class="numero">Pl. 03</span> Le bowl
+                <span class="etat">3D</span></a
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Le park, cours
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Events
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Rénovation
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Partenaires
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Historique
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Contact
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+          </ol>
+        </nav>
+      </details>
+    </header>
+
+    <aside class="cartouche" aria-label="Horaires, adresse et Instagram">
+      <p class="cartouche-etat" data-etat-bloc>
+        <span data-etat>Horaires : me, sa, di · 14h–18h</span>
+      </p>
+      <dl>
+        <dt>Horaires</dt>
+        <dd>me, sa, di · 14h–18h</dd>
+        <dt>Adresse</dt>
+        <dd>
+          <a
+            href="https://www.openstreetmap.org/search?query=Rue%20du%20Commerce%20126%2C%202300%20La%20Chaux-de-Fonds"
+            >Rue du Commerce 126, 2300 La Chaux-de-Fonds</a
+          >
+        </dd>
+        <dt>Instagram</dt>
+        <dd>
+          <a href="https://www.instagram.com/park_n_sun_/">@park_n_sun_</a>
+        </dd>
+      </dl>
+      <ul class="cartouche-pied">
+        <li><b>Planche</b> 02 · Infos pratiques</li>
+        <li><b>Date</b> 29.10.2026</li>
+        <li><b>Échelle</b> 1:1</li>
+      </ul>
+    </aside>
+
+    <div class="feuille">
+      <main id="contenu" class="planche">
+        <section class="ouverture" aria-labelledby="titre">
+          <p class="surtitre">Planche 02 · Pour venir rider</p>
+          <h1 id="titre" class="titre-planche">Infos pratiques</h1>
+          <p class="chapeau">
+            Horaires, tarifs, réservation, cours et contact : tout ce qu’il faut
+            avant de passer la porte des anciens abattoirs.
+          </p>
+        </section>
+
+        <section class="section" id="horaires" aria-labelledby="horaires-titre">
+          <p class="surtitre">Vue A · Heures d’ouverture</p>
+          <h2 id="horaires-titre">Horaires</h2>
+          <p class="etat-ligne" data-etat-bloc>
+            <span data-etat>me, sa, di · 14h–18h</span>
+          </p>
+          <table class="semaine">
+            <caption class="sr-only">
+              Heures d’ouverture du skatepark, par jour de la semaine
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Jour</th>
+                <th scope="col">Heures</th>
+                <th scope="col" class="semaine-echelle" aria-hidden="true">
+                  <span>10h</span><span>14h</span><span>18h</span
+                  ><span>22h</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lundi</th>
+                <td>fermé</td>
+                <td class="semaine-barre" aria-hidden="true"></td>
+              </tr>
+              <tr>
+                <th scope="row">Mardi</th>
+                <td>fermé</td>
+                <td class="semaine-barre" aria-hidden="true"></td>
+              </tr>
+              <tr class="ouvert">
+                <th scope="row">Mercredi</th>
+                <td>14h à 18h</td>
+                <td class="semaine-barre" aria-hidden="true"><span></span></td>
+              </tr>
+              <tr>
+                <th scope="row">Jeudi</th>
+                <td>fermé</td>
+                <td class="semaine-barre" aria-hidden="true"></td>
+              </tr>
+              <tr>
+                <th scope="row">Vendredi</th>
+                <td>fermé</td>
+                <td class="semaine-barre" aria-hidden="true"></td>
+              </tr>
+              <tr class="ouvert">
+                <th scope="row">Samedi</th>
+                <td>14h à 18h</td>
+                <td class="semaine-barre" aria-hidden="true"><span></span></td>
+              </tr>
+              <tr class="ouvert">
+                <th scope="row">Dimanche</th>
+                <td>14h à 18h</td>
+                <td class="semaine-barre" aria-hidden="true"><span></span></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            <span class="a-fournir"
+              >[À FOURNIR : horaires pendant les vacances et les jours
+              fériés]</span
+            >
+          </p>
+        </section>
+
+        <section class="section fiches" aria-labelledby="tarifs-titre">
+          <div class="fiche" id="tarifs">
+            <p class="surtitre">Vue B · Tarifs</p>
+            <h2 id="tarifs-titre">Tarifs</h2>
+            <dl class="prix">
+              <div>
+                <dt>Entrée</dt>
+                <dd>5.-</dd>
+              </div>
+              <div>
+                <dt>Abonnement annuel</dt>
+                <dd>150.-</dd>
+              </div>
+            </dl>
+            <p>
+              Les entrées et les abonnements sont à payer directement au
+              skatepark durant les heures d’ouverture.
+              <strong>Paiement en cash et TWINT uniquement.</strong>
+            </p>
+            <p>
+              <span class="a-fournir"
+                >[À FOURNIR : tarifs à confirmer pour 2026]</span
+              >
+            </p>
+          </div>
+
+          <div class="fiche" id="reservation">
+            <p class="surtitre">Vue C · Réservation, anniversaire</p>
+            <h2>Réserver le park</h2>
+            <p>
+              Il est possible de réserver le skatepark pour un anniversaire, un
+              souper, un tournage vidéo ou une session privée,
+              <strong>en dehors des heures d’ouverture</strong>.
+            </p>
+            <p class="cote"><span>environ 50 CHF / heure</span></p>
+            <p>
+              Le tarif peut être négociable en fonction du nombre de personnes
+              et de l’horaire choisi. Pour demander une réservation, écrivez à
+              <a href="mailto:gabriel.griesser@hotmail.com">Gabriel Griesser</a
+              >.
+            </p>
+            <p>
+              <span class="a-fournir"
+                >[À FOURNIR : procédure de demande, conditions, assurance,
+                capacité maximale]</span
+              >
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="cours" aria-labelledby="cours-titre">
+          <p class="surtitre">Vue D · Pour les parents</p>
+          <h2 id="cours-titre">Cours</h2>
+          <ul class="nomenclature">
+            <li>
+              <h3>Trottinette freestyle</h3>
+              <p>
+                Donnés par Colin et Steve au Park N’ Sun. Prix : 30.-, durée :
+                1h, niveau débutant et avancé.
+              </p>
+              <ul>
+                <li>
+                  <a
+                    class="lien-outil"
+                    href="mailto:cours-trottinette@bluewin.ch"
+                    >Inscription par mail</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="lien-outil"
+                    href="https://www.instagram.com/cours_trottinette_parknsun/"
+                    >@cours_trottinette_parknsun</a
+                  >
+                </li>
+              </ul>
+              <p>
+                <span class="a-fournir"
+                  >[À FOURNIR : jours et horaires des cours, âge minimum,
+                  équipement requis]</span
+                >
+              </p>
+            </li>
+            <li>
+              <h3>Skateboard</h3>
+              <p>
+                Donnés par le skateur Kevin Stadelmann, de l’école Go
+                Skateboarding School. Toutes les informations sont sur son site.
+              </p>
+              <ul>
+                <li>
+                  <a
+                    class="lien-outil"
+                    href="https://www.goskateboardingschool.com/"
+                    >Go Skateboarding School</a
+                  >
+                </li>
+              </ul>
+              <p>
+                <span class="a-fournir"
+                  >[À FOURNIR : confirmer que ces cours sont toujours
+                  donnés]</span
+                >
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="securite" aria-labelledby="securite-titre">
+          <p class="surtitre">Vue E · Sécurité</p>
+          <h2 id="securite-titre">Sécurité</h2>
+          <p>
+            <span class="a-fournir"
+              >[À FOURNIR : règles de sécurité du park (casque, protections,
+              âge, responsabilité des parents) et règlement]</span
+            >
+          </p>
+        </section>
+
+        <section class="section acier" id="acces" aria-labelledby="acces-titre">
+          <p class="surtitre">Vue F · Accès et contact</p>
+          <h2 id="acces-titre">Venir, écrire</h2>
+          <div class="acces-grille">
+            <div>
+              <h3>Adresse</h3>
+              <p>
+                Skatepark Park N’ Sun, anciens abattoirs<br />Rue du Commerce
+                126<br />2300 La Chaux-de-Fonds
+              </p>
+              <p>
+                <a
+                  href="https://www.openstreetmap.org/search?query=Rue%20du%20Commerce%20126%2C%202300%20La%20Chaux-de-Fonds"
+                  >Voir sur la carte (OpenStreetMap)</a
+                >
+              </p>
+              <p>
+                <span class="a-fournir"
+                  >[À FOURNIR : plan d’accès et transports publics]</span
+                >
+              </p>
+            </div>
+            <div>
+              <h3>Contact</h3>
+              <p>
+                Gabriel Griesser, contact actuel :
+                <a href="mailto:gabriel.griesser@hotmail.com"
+                  >gabriel.griesser@hotmail.com</a
+                >
+              </p>
+              <p>
+                Léo Girard, porte-parole :
+                <span class="a-fournir">[EMAIL/TÉL de Léo]</span>
+              </p>
+              <p>
+                <span class="a-fournir"
+                  >[À FOURNIR : téléphone à confirmer]</span
+                >
+              </p>
+            </div>
+            <div>
+              <h3>Réseaux</h3>
+              <p>
+                <a href="https://www.instagram.com/park_n_sun_/"
+                  >Instagram @park_n_sun_</a
+                ><br /><a href="https://www.facebook.com/park.nsun/"
+                  >Facebook</a
+                >
+                <span class="a-fournir"
+                  >[À FOURNIR : Facebook encore utilisé ?]</span
+                >
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section archive" aria-labelledby="dons-titre">
+          <p class="surtitre">Archive · 2023</p>
+          <h2 id="dons-titre">Dons</h2>
+          <p>
+            Texte du site actuel : « Si vous souhaitez aider l’association Park
+            N’ Sun pour financer le projet de rénovation de 2023, votre don est
+            le bienvenu via le lien suivant ou par le biais du QR Code TWINT. »
+          </p>
+          <p>
+            <a href="https://pay.raisenow.io/xsccv"
+              >Lien de don RaiseNow (2023)</a
+            >
+          </p>
+          <p>
+            <span class="a-fournir"
+              >[À FOURNIR : l’appel aux dons est-il toujours actif ?]</span
+            >
+          </p>
+        </section>
+      </main>
+
+      <footer class="pied">
+        <div class="pied-grille">
+          <div>
+            <p class="pied-logo">
+              <img
+                src="img/logo-c.svg"
+                alt="Park N’ Sun"
+                width="480"
+                height="320"
+              />
+            </p>
+            <p class="annot">Association Park N’ Sun · depuis 2003</p>
+          </div>
+          <div>
+            <h2>Venir</h2>
+            <p>Mercredi, samedi, dimanche · 14h–18h</p>
+            <p>Rue du Commerce 126, 2300 La Chaux-de-Fonds</p>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/park_n_sun_/"
+                  >Instagram @park_n_sun_</a
+                >
+              </li>
+              <li>
+                <a href="https://www.facebook.com/park.nsun/">Facebook</a> (à
+                confirmer)
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contact</h2>
+            <p>
+              Gabriel Griesser, contact actuel :
+              <a href="mailto:gabriel.griesser@hotmail.com"
+                >gabriel.griesser@hotmail.com</a
+              >
+            </p>
+            <p>
+              Léo Girard, porte-parole :
+              <span class="a-fournir">[EMAIL/TÉL de Léo]</span>
+            </p>
+            <p>
+              <span class="a-fournir">[À FOURNIR : téléphone à confirmer]</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
