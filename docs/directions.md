@@ -30,6 +30,13 @@ image qui tremble.
 Les 3 directions diffèrent sur les 7 axes : idée, palette, typos, mise en page,
 interaction, identité et traitement du bowl.
 
+**Commun aux 3 maquettes.** Mobile d'abord ; sélecteur de langue FR / EN / DE visible
+dans l'en-tête (contenu en FR pour l'instant, EN et DE marqués « bientôt ») ; horaires,
+adresse complète (Rue du Commerce 126, 2300 La Chaux-de-Fonds) et Instagram trouvables
+en moins de 5 s ; `prefers-reduced-motion` respecté ; contraste AA ; navigation et
+puces ouvrables au clavier avec focus visible ; emplacements vidéo marqués
+`[À FOURNIR : vidéo de Léo]`.
+
 ---
 
 ## A : Le damier
@@ -63,8 +70,8 @@ inchangée (image).
 **Mise en page.** Mobile d'abord. Une colonne d'îlots carrés qui passe à 2, 3 ou 4
 colonnes. Les îlots ont des contenus de tailles différentes (pas de cartes égales en
 série). En tête de chaque page, une barre fixe « Ouvert / Fermé · me sa di 14h–18h ·
-Rue du Commerce 126 · Instagram » : les 3 infos clés sont visibles en moins de 5 s sur
-toutes les pages.
+Rue du Commerce 126, 2300 La Chaux-de-Fonds · Instagram » : les 3 infos clés sont
+visibles en moins de 5 s sur toutes les pages.
 
 **Interaction signature.** Le bandeau « ouvert maintenant » calcule l'état du park
 (module ES testé). Le plan d'accès est un damier stylisé : les rues de la ville en
@@ -111,16 +118,20 @@ permettent de faire « gonfler » les lettres avec la chaleur. Le lettrage du lo
 redessiné dans cet esprit, rond et massif, en restant reconnaissable. Figtree pour le
 texte.
 
-**Mise en page.** Un seul fil vertical de scènes plein écran (`100dvh`) : le froid, la
-blague, la lampe, la chaleur, puis le park aujourd'hui. Typo géante qui déborde,
-photos en pleine largeur. Une puce flottante « Aujourd'hui 14h–18h · Adresse ·
-Instagram » reste accessible partout et s'ouvre au tap.
+**Mise en page.** Un seul fil vertical de scènes d'au moins un écran
+(`min-height: 100dvh`, pour que le zoom du texte ne déborde jamais) : le froid, la
+blague, la lampe, la chaleur, puis le park aujourd'hui. Typo géante, photos en pleine
+largeur. Une puce flottante reste accessible partout. Son libellé est calculé selon la
+date locale, par exemple « Ouvert maintenant » ou « Prochaine ouverture : samedi 14h ».
+Elle s'ouvre au tap comme au clavier, avec un focus visible, sur « me sa di 14h–18h ·
+Rue du Commerce 126, 2300 La Chaux-de-Fonds · Instagram ».
 
 **Interaction signature.** Une seule variable de « température » (0 → 1), pilotée par
 le scroll, fait passer les fonds du givre à la lumière ambrée, épaissit la graisse des
 titres et allume la lampe, un halo radial au-dessus des gradins. En reduced motion, la
 page est directement « allumée » et le récit reste lisible. Logique de température en
-module ES testé.
+module ES testé. Le test vérifie aussi le contraste texte/fond à chaque palier de la
+transition froid → chaud, pas seulement aux deux extrémités.
 
 **Le bowl.** Coupe SVG animée au scroll : la courbe se remplit de lumière, puis une
 timeline photo des années du bowl jusqu'à son démontage
@@ -145,7 +156,8 @@ aiguilles de montre, un savoir-faire de La Chaux-de-Fonds.
 
 - Logo : une coupe de bowl dessinée en couches de contreplaqué, dont la margelle sert
   d'horizon à un soleil levant, la lampe disparue. Esquisse :
-  [`directions/c-logo-esquisse.svg`](directions/c-logo-esquisse.svg).
+  [`directions/c-logo-esquisse.svg`](directions/c-logo-esquisse.svg). Le lettrage
+  de l'esquisse dépend de la police installée. Il sera vectorisé dans la maquette C.
 - Le nom en capitales étroites, sur une ligne.
 
 **Palette** :
@@ -169,8 +181,8 @@ pour les cotes et annotations des planches.
 **Mise en page.** Chaque page est une planche : cartouche en coin (titre, date,
 échelle), lignes de cote, coupes et vues annotées. Le contenu reste en HTML classique,
 navigable et lisible, et seule la section bowl est en 3D. Le cartouche de chaque
-planche contient toujours « me sa di 14h–18h · Rue du Commerce 126 · Instagram » : les
-infos clés sont trouvables en moins de 5 s.
+planche contient toujours « me sa di 14h–18h · Rue du Commerce 126, 2300 La
+Chaux-de-Fonds · Instagram » : les infos clés sont trouvables en moins de 5 s.
 
 **Interaction signature.** Le bowl en 3D (Three.js via CDN, chargé à la demande quand
 on approche de la section) : le scroll fait rouler la caméra le long d'une ligne de
