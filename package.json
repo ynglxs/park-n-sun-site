@@ -1,0 +1,28 @@
+{
+  "name": "park-n-sun-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Nouveau site du skatepark couvert Park N' Sun (La Chaux-de-Fonds)",
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js && npm run lint:format",
+    "lint:html": "html-validate \"mockups/**/*.html\"",
+    "lint:css": "stylelint \"mockups/**/*.css\" --allow-empty-input",
+    "lint:js": "eslint .",
+    "lint:format": "prettier --check .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "screenshots": "node scripts/screenshots.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "html-validate": "^11.17.0",
+    "playwright": "^1.64.1",
+    "prettier": "^3.9.10",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
+    "vitest": "^5.0.5"
+  }
+}

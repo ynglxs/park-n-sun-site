@@ -9,8 +9,8 @@
 ## Captures
 
 | 390px | 1440px |
-|---|---|
-| | |
+| ----- | ------ |
+|       |        |
 
 ## Checklist (Definition of Done)
 
