@@ -1,0 +1,71 @@
+/* Maquette C, « L'atelier » : tokens (docs/directions.md, section C).
+   Contrastes vérifiés par tests/c-palette.test.js. */
+
+:root {
+  /* Bois et crayon */
+  --color-birch: oklch(90% 0.035 80deg); /* fond bouleau (contreplaqué) */
+  --color-birch-light: oklch(94.5% 0.022 82deg); /* papier du cartouche */
+  --color-birch-deep: oklch(84% 0.045 76deg); /* bandes, cadres */
+  --color-graphite: oklch(23% 0.015 262deg); /* texte : crayon de menuisier */
+  --color-graphite-soft: oklch(40% 0.02 262deg); /* texte secondaire */
+  --color-grain: oklch(
+    55% 0.06 60deg
+  ); /* veinage : décor et filets seulement */
+
+  /* Métal et lumière */
+  --color-blued: oklch(
+    36% 0.12 262deg
+  ); /* acier bleui : liens, titres, surfaces fortes */
+
+  --color-blued-strong: oklch(29% 0.11 262deg); /* survol et focus */
+  --color-blued-light: oklch(
+    82% 0.06 262deg
+  ); /* texte secondaire sur acier bleui */
+
+  --color-sodium: oklch(
+    80% 0.15 78deg
+  ); /* lampe au sodium : soleil, surlignage */
+
+  /* Rôles */
+  --color-surface: var(--color-birch);
+  --color-text: var(--color-graphite);
+  --color-link: var(--color-blued);
+  --color-link-hover: var(--color-blued-strong);
+  --color-focus: var(--color-blued-strong);
+  --color-rule: oklch(23% 0.015 262deg / 55%); /* filets de cote (décor) */
+  --color-rule-faint: oklch(23% 0.015 262deg / 18%);
+
+  /* Typographie */
+  --font-display:
+    "Big Shoulders Display", "Arial Narrow", "Liberation Sans Narrow",
+    sans-serif;
+  --font-text: "Literata", "Iowan Old Style", georgia, serif;
+  --font-mono:
+    "Spline Sans Mono", ui-monospace, "SFMono-Regular", menlo, monospace;
+  --step-moins-1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --step-2: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
+  --step-3: clamp(2.5rem, 1.8rem + 3.4vw, 4.25rem);
+  --step-4: clamp(3.25rem, 2rem + 7vw, 8rem);
+
+  /* Espacements (échelle de 4 px) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Mouvement : précis, sortie douce */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --duree-court: 160ms;
+
+  /* Mise en page */
+  --gouttiere: var(--space-4);
+  --cartouche-largeur: 22rem;
+  --trait: 1.5px;
+}

@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Le bowl · hommage · Park N’ Sun (maquette C)</title>
+    <meta
+      name="description"
+      content="Hommage au bowl de Park N’ Sun, construit par l’association à La Chaux-de-Fonds et définitivement fermé : parcours en 3D le long d’une ligne de ride."
+    />
+    <meta name="theme-color" content="oklch(90% 0.035 80)" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400&family=Spline+Sans+Mono:wght@400..600&display=swap"
+    />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/atelier.css" />
+    <link rel="stylesheet" href="css/bowl.css" />
+    <script type="module" src="js/page.js"></script>
+    <script type="module" src="js/bowl.js"></script>
+  </head>
+  <body>
+    <a class="evitement" href="#contenu">Aller au contenu</a>
+
+    <div class="marge-haute">
+      <p class="annot">Pl. 03 · Le bowl</p>
+      <nav aria-label="Langue">
+        <ul class="langues" data-langues>
+          <li><span class="langue" lang="fr" aria-current="true">FR</span></li>
+          <li>
+            <span class="langue" lang="en"
+              >EN <small lang="fr">bientôt</small></span
+            >
+          </li>
+          <li>
+            <span class="langue" lang="de"
+              >DE <small lang="fr">bientôt</small></span
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="entete">
+      <a class="entete-logo" href="index.html">
+        <img
+          src="img/logo-c-horizontal.svg"
+          alt="Park N’ Sun, accueil"
+          width="280"
+          height="64"
+        />
+      </a>
+      <details class="sommaire">
+        <summary>Sommaire</summary>
+        <nav aria-label="Sommaire des planches">
+          <ol>
+            <li>
+              <a href="index.html"
+                ><span class="numero">Pl. 01</span> Accueil
+                <span class="etat"></span
+              ></a>
+            </li>
+            <li>
+              <a href="infos-pratiques.html"
+                ><span class="numero">Pl. 02</span> Infos pratiques
+                <span class="etat"></span
+              ></a>
+            </li>
+            <li>
+              <a href="bowl.html" aria-current="page"
+                ><span class="numero">Pl. 03</span> Le bowl
+                <span class="etat">3D</span></a
+              >
+            </li>
+            <li>
+              <a href="infos-pratiques.html#cours"
+                ><span class="numero">Pl. 02</span> Cours
+                <span class="etat">infos</span></a
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Events
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Rénovation
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Partenaires
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Historique
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+            <li>
+              <span class="bientot"
+                ><span class="numero">—</span> Contact
+                <span class="etat">bientôt</span></span
+              >
+            </li>
+          </ol>
+        </nav>
+      </details>
+    </header>
+
+    <aside class="cartouche" aria-label="Horaires, adresse et Instagram">
+      <p class="cartouche-etat" data-etat-bloc>
+        <span data-etat>Horaires : me, sa, di · 14h–18h</span>
+      </p>
+      <dl>
+        <dt>Horaires</dt>
+        <dd>me, sa, di · 14h–18h</dd>
+        <dt>Adresse</dt>
+        <dd>
+          <a
+            href="https://www.openstreetmap.org/search?query=Rue%20du%20Commerce%20126%2C%202300%20La%20Chaux-de-Fonds"
+            >Rue du Commerce 126, 2300 La Chaux-de-Fonds</a
+          >
+        </dd>
+        <dt>Instagram</dt>
+        <dd>
+          <a href="https://www.instagram.com/park_n_sun_/">@park_n_sun_</a>
+        </dd>
+      </dl>
+      <ul class="cartouche-pied">
+        <li><b>Planche</b> 03 · Le bowl</li>
+        <li><b>Date</b> 2013 · fermé</li>
+        <li><b>Échelle</b> non cotée</li>
+      </ul>
+    </aside>
+
+    <div class="feuille">
+      <main id="contenu" class="planche planche-bowl">
+        <section class="ouverture" aria-labelledby="titre">
+          <p class="surtitre">Planche 03 · Hommage historique</p>
+          <h1 id="titre" class="titre-planche">Le bowl</h1>
+          <p class="ferme">
+            Le bowl de la Chaux-de-Fonds est définitivement fermé.
+          </p>
+          <p class="chapeau">
+            Depuis 2013, un bowl, sorte de bassin aux parois recourbées, a été
+            érigé dans un local annexe de 180 m². Comme pour le skatepark, le
+            design du bowl, ainsi que sa conception technique et sa
+            construction, ont été assumés par les membres de l’association Park
+            n’Sun.
+          </p>
+          <figure class="vue">
+            <div class="vue-cadre">
+              <img
+                src="../shared/img/2022-01-pns-07-1280.webp"
+                srcset="
+                  ../shared/img/2022-01-pns-07-640.webp   640w,
+                  ../shared/img/2022-01-pns-07-1280.webp 1280w
+                "
+                sizes="(width >= 75rem) 60rem, 100vw"
+                width="1280"
+                height="587"
+                alt="Le bowl terminé, vu en panorama : un bassin en bois clair aux parois recourbées, bordé de margelles grises, avec deux niveaux de profondeur et des poteaux du local qui le traversent."
+              />
+            </div>
+            <figcaption>
+              <p><b>Vue 1</b> La construction du bowl est terminée.</p>
+            </figcaption>
+          </figure>
+        </section>
+
+        <section
+          class="parcours"
+          data-bowl
+          data-mode="attente"
+          aria-labelledby="parcours-titre"
+        >
+          <div class="parcours-entete">
+            <p class="surtitre">Vue 2 · Maquette d’interprétation</p>
+            <h2 id="parcours-titre">Rouler dans le bowl</h2>
+            <p>
+              Faites défiler : la caméra suit une ligne de ride dans la courbe.
+              La forme est une <strong>interprétation</strong> : deux niveaux de
+              profondeur, des parois recourbées, une margelle, un poteau. Elle
+              n’est pas à l’échelle.
+              <span class="a-fournir"
+                >[À FOURNIR : dimensions ou photos du bowl pour la
+                modélisation]</span
+              >
+            </p>
+            <div class="parcours-commande">
+              <button
+                type="button"
+                class="lien-outil lien-outil-fort"
+                data-bowl-entrer
+              >
+                Entrer dans le bowl (3D, environ 190 ko)
+              </button>
+              <p
+                class="annot parcours-statut"
+                role="status"
+                data-bowl-statut
+              ></p>
+            </div>
+          </div>
+
+          <div class="parcours-piste" data-bowl-piste>
+            <div
+              class="parcours-scene"
+              data-bowl-scene
+              role="img"
+              aria-label="Maquette du bowl en contreplaqué : un bassin en haricot aux parois recourbées, plus profond d’un côté, bordé d’une margelle. Une ligne pointillée trace le parcours d’un rider."
+            >
+              <figure class="coupe">
+                <svg viewBox="0 0 700 240" aria-hidden="true" focusable="false">
+                  <defs>
+                    <pattern
+                      id="plis"
+                      width="12"
+                      height="6.44"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <rect class="plein-bouleau" width="12" height="6.44" />
+                      <line
+                        class="trait trait-fin trait-veinage"
+                        x1="0"
+                        y1="6"
+                        x2="12"
+                        y2="6"
+                      />
+                    </pattern>
+                    <path
+                      id="coupe-texte"
+                      d="M101.6 99.6L102.6 103.1L104.1 106.4L106 109.5L108.3 112.2L111 114.7L114 116.8L117.3 118.4L120.7 119.6L124.3 120.3L129.2 120.5L149.3 120.5L169.4 120.5L189.4 120.5L209.5 120.5L229.6 120.5L249.7 120.5L271.5 120.7L298 125.6L321.2 134.2L360.3 151.5L375.8 156.3L390.2 157.3L410.3 157.3L430.4 157.3L450.5 157.3L470.6 157.3L490.6 157.3L510.7 157.3L530.8 157.3L539.4 156.8L546.9 155.4L554.2 152.9L561 149.5L567.3 145.1L572.9 140L577.8 134.1L581.9 127.6L585 120.6L587.2 113.3"
+                    />
+                  </defs>
+                  <path
+                    class="plein-plis trait"
+                    d="M12.6 80L72.4 80L72.4 80L72.4 85.8L72.4 91.5L72.6 98.3L73.7 105.7L75.8 113L78.9 119.8L82.9 126.2L87.7 132L93.3 137L99.5 141.3L106.2 144.7L113.3 147.1L120.7 148.6L129.2 149L149.3 149L169.4 149L189.4 149L209.5 149L229.6 149L249.7 149L269.8 149.1L289.8 152.9L309.9 160.4L350.1 178.1L370.2 184.2L390.2 185.8L410.3 185.8L430.4 185.8L450.5 185.8L470.6 185.8L490.6 185.8L510.7 185.8L530.8 185.8L543 185.1L554.3 182.9L565.2 179.2L575.5 174L585 167.5L593.5 159.7L600.9 150.8L607 141.1L611.8 130.5L615 119.5L616.8 108.1L617 97.6L617 88.8L617 80L679.6 80L679.6 213.4L12.6 213.4Z"
+                  />
+                  <path
+                    class="trait trait-acier trait-tirets"
+                    d="M87.1 80L87.1 85.8L87.1 91.5L87.3 97.1L88.1 102.6L89.6 107.9L91.9 112.9L94.8 117.6L98.4 121.8L102.4 125.5L107 128.6L111.9 131.1L117.1 132.9L122.5 134L129.2 134.3L149.3 134.3L169.4 134.3L189.4 134.3L209.5 134.3L229.6 134.3L249.7 134.3L270.7 134.4L294 138.8L315.7 146.9L355.3 164.4L373.1 169.8L390.2 171.1L410.3 171.1L430.4 171.1L450.5 171.1L470.6 171.1L490.6 171.1L510.7 171.1L530.8 171.1L541.1 170.5L550.5 168.7L559.5 165.6L568 161.3L575.9 155.9L582.9 149.5L589 142.2L594.1 134.1L598 125.4L600.7 116.3L602.1 106.9L602.3 97.6L602.3 88.8L602.3 80"
+                  />
+                  <text class="svg-titre coupe-texte">
+                    <textPath href="#coupe-texte" startOffset="4%">
+                      Le bowl · 2013 · définitivement fermé
+                    </textPath>
+                  </text>
+                  <!-- cotes : valeurs inconnues, signalées comme telles -->
+                  <path
+                    class="trait trait-fin"
+                    d="M72 40H617M72 32V48M617 32V48"
+                  />
+                  <text class="svg-annot" x="344" y="30" text-anchor="middle">
+                    longueur : [À FOURNIR : longueur du bowl]
+                  </text>
+                  <path
+                    class="trait trait-fin"
+                    d="M660 80V186M652 80H668M652 186H668"
+                  />
+                  <text class="svg-annot" x="652" y="230" text-anchor="end">
+                    profondeur : [À FOURNIR : profondeur du bowl]
+                  </text>
+                  <text class="svg-annot" x="120" y="176">
+                    niveau peu profond
+                  </text>
+                  <text class="svg-annot" x="420" y="207">niveau profond</text>
+                  <text class="svg-annot" x="16" y="70">margelle</text>
+                </svg>
+                <figcaption class="annot">
+                  Coupe A–A, sans échelle : interprétation.
+                </figcaption>
+              </figure>
+            </div>
+
+            <ol class="parcours-chapitres">
+              <li data-chapitre>
+                <p class="surtitre">1 · Le local</p>
+                <h3>Un local annexe de 180 m²</h3>
+                <p>
+                  Le design est réfléchi spécifiquement pour ce local, un local
+                  annexe de 180 m² aux anciens abattoirs.
+                </p>
+              </li>
+              <li data-chapitre>
+                <p class="surtitre">2 · Les mains</p>
+                <h3>Conçu et construit par l’association</h3>
+                <p>
+                  Réalisé bénévolement, mais avec une qualité professionnelle
+                  grâce au concours de menuisiers et serruriers membres et amis
+                  de l’association.
+                </p>
+              </li>
+              <li data-chapitre>
+                <p class="surtitre">3 · La difficulté</p>
+                <h3>Deux niveaux de profondeur</h3>
+                <p>
+                  La construction est rendue complexe par la déclivité du sol,
+                  les formes arrondies, notamment autour des poteaux du local,
+                  le changement entre deux niveaux de profondeur et
+                  l’utilisation de margelles en béton en guise de bordure.
+                </p>
+              </li>
+              <li data-chapitre>
+                <p class="surtitre">4 · Le temps</p>
+                <h3>Près de 1500 heures de travail</h3>
+                <p>
+                  Le bowl a nécessité près de 1500 heures de travail, réparties
+                  sur une année.
+                </p>
+              </li>
+              <li data-chapitre>
+                <p class="surtitre">5 · La fin</p>
+                <h3>Définitivement fermé</h3>
+                <p>
+                  Le bowl a été démonté.
+                  <span class="a-fournir"
+                    >[À FOURNIR : date exacte du démontage, ce que sont devenus
+                    les éléments du bowl]</span
+                  >
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="financement-titre">
+          <p class="surtitre">Note · Financement</p>
+          <h2 id="financement-titre">100’000 francs, 250’000 estimés</h2>
+          <p>
+            Dès l’origine du skatepark, ces travaux ont été effectués avec le
+            soutien financier de la Ville de La Chaux-de-Fonds à travers le
+            Parlement des Jeunes et le Service des Sports, de la Loterie
+            romande, de la fondation Helvetia pour la Jeunesse et de plusieurs
+            autres contributeurs privés. Ce sont ainsi près de 100’000 francs
+            qui ont été obtenus et investis dans ces installations.
+          </p>
+          <p>
+            Confiée à des entreprises privées, la réalisation de telles
+            infrastructures aurait représenté environ 250’000 francs, comme en
+            témoignent les estimations faites par l’une d’entre elles.
+          </p>
+          <p class="annot">Texte de la page « Le bowl » du site actuel.</p>
+        </section>
+
+        <section class="section" aria-labelledby="chantier-titre">
+          <p class="surtitre">Vues 3 à 5 · Le chantier</p>
+          <h2 id="chantier-titre">De la charpente à la courbe</h2>
+          <div class="galerie">
+            <figure class="vue">
+              <div class="vue-cadre">
+                <img
+                  src="../shared/img/2022-01-pns-05-640.webp"
+                  width="617"
+                  height="494"
+                  alt="Début du chantier dans le local carrelé : un gabarit de courbe en bois avec ses nervures, et des tasseaux posés au sol."
+                />
+              </div>
+              <figcaption>
+                <p><b>Vue 3</b> Début de la construction du bowl.</p>
+              </figcaption>
+            </figure>
+            <figure class="vue">
+              <div class="vue-cadre">
+                <img
+                  src="../shared/img/2022-01-pns-06-640.webp"
+                  srcset="
+                    ../shared/img/2022-01-pns-06-640.webp   640w,
+                    ../shared/img/2022-01-pns-06-1280.webp 1258w
+                  "
+                  sizes="(width >= 48rem) 50vw, 100vw"
+                  width="640"
+                  height="303"
+                  alt="Le bowl en chantier : des bénévoles posent les plaques de contreplaqué sur les nervures en bois des courbes."
+                />
+              </div>
+              <figcaption>
+                <p><b>Vue 4</b> Construction du bowl dans son ensemble.</p>
+              </figcaption>
+            </figure>
+            <figure class="vue">
+              <div class="vue-cadre">
+                <img
+                  src="../shared/img/2023-03-streetdays-45-640.webp"
+                  width="638"
+                  height="956"
+                  alt="Un skateur en t-shirt blanc prend la courbe du bowl sous la margelle, pendant qu’un spectateur assis sur la plateforme le regarde."
+                />
+              </div>
+              <figcaption>
+                <p>
+                  <b>Vue 5</b> Jam session de skateboard au bowl, StreetDay
+                  2021. Photo : @SteveVisinand.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="video-titre">
+          <p class="surtitre">Vue 6 · Vidéo</p>
+          <h2 id="video-titre">Hommage au bowl</h2>
+          <div class="video-vide">
+            <p>
+              <span class="a-fournir">[À FOURNIR : vidéo de Léo]</span
+              ><br />Hommage au bowl, cadre 16:9
+            </p>
+          </div>
+          <p>
+            <span class="a-fournir"
+              >[À FOURNIR : photos et vidéos d’archives, témoignages, parties du
+              bowl réellement réutilisées dans le park rénové]</span
+            >
+          </p>
+        </section>
+      </main>
+
+      <footer class="pied">
+        <div class="pied-grille">
+          <div>
+            <p class="pied-logo">
+              <img
+                src="img/logo-c.svg"
+                alt="Park N’ Sun"
+                width="480"
+                height="320"
+              />
+            </p>
+            <p class="annot">Association Park N’ Sun · depuis 2003</p>
+          </div>
+          <div>
+            <h2>Venir</h2>
+            <p>Mercredi, samedi, dimanche · 14h–18h</p>
+            <p>Rue du Commerce 126, 2300 La Chaux-de-Fonds</p>
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/park_n_sun_/"
+                  >Instagram @park_n_sun_</a
+                >
+              </li>
+              <li>
+                <a href="https://www.facebook.com/park.nsun/">Facebook</a> (à
+                confirmer)
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2>Contact</h2>
+            <p>
+              Gabriel Griesser, contact actuel :
+              <a href="mailto:gabriel.griesser@hotmail.com"
+                >gabriel.griesser@hotmail.com</a
+              >
+            </p>
+            <p>
+              Léo Girard, porte-parole :
+              <span class="a-fournir">[EMAIL/TÉL de Léo]</span>
+            </p>
+            <p>
+              <span class="a-fournir">[À FOURNIR : téléphone à confirmer]</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

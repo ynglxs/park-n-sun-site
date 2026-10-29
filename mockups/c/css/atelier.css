@@ -1,0 +1,1272 @@
+/* stylelint-disable no-descending-specificity -- les sélecteurs de composants
+   (.pied li, .acier a…) ne s'imbriquent pas : l'ordre suit les composants, pas la spécificité. */
+
+/* Maquette C, « L'atelier » : chaque page est une planche d'atelier.
+   Mobile d'abord (390 px), puis tablette (48rem) et grand écran (75rem). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--space-4);
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--color-surface);
+  background-image: url("../img/veinage.svg");
+  background-size: 480px 480px;
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: var(--step-0);
+  font-optical-sizing: auto;
+  line-height: 1.65;
+  touch-action: manipulation;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--color-blued);
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--step-3);
+}
+
+h3 {
+  font-size: var(--step-2);
+  line-height: 1.05;
+}
+
+p {
+  margin: 0 0 var(--space-4);
+  max-width: 64ch;
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color var(--duree-court) var(--ease-out);
+}
+
+a:hover {
+  color: var(--color-link-hover);
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Lien d'évitement */
+.evitement {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 30;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-blued);
+  color: var(--color-birch-light);
+  font-family: var(--font-mono);
+  transform: translateY(-200%);
+}
+
+.evitement:focus-visible {
+  transform: none;
+  outline-color: var(--color-sodium);
+}
+
+/* ---------- Annotations (Spline Sans Mono) ---------- */
+.annot,
+.surtitre {
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.surtitre {
+  display: flex;
+  gap: var(--space-2);
+  align-items: baseline;
+  margin: 0 0 var(--space-3);
+  color: var(--color-graphite-soft);
+}
+
+.surtitre::before {
+  content: "";
+  flex: 0 0 1.5rem;
+  height: var(--trait);
+  background: currentcolor;
+  transform: translateY(-0.3em);
+}
+
+/* Contenu manquant : surligné au sodium, comme au marqueur sur un plan. */
+.a-fournir {
+  padding: 0.05em 0.3em;
+  background: var(--color-sodium);
+  color: var(--color-graphite);
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  font-weight: 500;
+  box-decoration-break: clone;
+}
+
+/* ---------- Bandeau de langue (marge haute de la planche) ---------- */
+.marge-haute {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--gouttiere);
+  border-bottom: var(--trait) solid var(--color-graphite);
+  color: var(--color-graphite-soft);
+}
+
+.marge-haute .annot {
+  margin: 0;
+}
+
+.langues {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.langue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  min-height: 2.75rem;
+  padding: 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 500;
+}
+
+.langue[aria-current] {
+  color: var(--color-blued);
+  font-weight: 600;
+  text-decoration: underline 2px;
+  text-underline-offset: 0.3em;
+}
+
+.langue small {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: lowercase;
+}
+
+/* ---------- En-tête ---------- */
+.entete {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--gouttiere);
+}
+
+.entete-logo {
+  display: block;
+  min-height: 2.75rem;
+}
+
+.entete-logo img {
+  width: auto;
+  height: 2.75rem;
+}
+
+/* Sommaire des planches : <details>, ouvrable au clavier sans JS. */
+.sommaire summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: 0 var(--space-4);
+  border: var(--trait) solid var(--color-blued);
+  color: var(--color-blued);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  list-style: none;
+  cursor: pointer;
+}
+
+.sommaire summary::-webkit-details-marker {
+  display: none;
+}
+
+.sommaire summary::after {
+  content: "";
+  width: 0.55em;
+  height: 0.55em;
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  transform: translateY(-0.15em) rotate(45deg);
+  transition: transform var(--duree-court) var(--ease-out);
+}
+
+.sommaire[open] summary::after {
+  transform: translateY(0.1em) rotate(-135deg);
+}
+
+.sommaire summary:hover {
+  background: var(--color-blued);
+  color: var(--color-birch-light);
+}
+
+.sommaire nav {
+  position: absolute;
+  top: 100%;
+  right: var(--gouttiere);
+  left: var(--gouttiere);
+  z-index: 20;
+  padding: var(--space-4);
+  border: var(--trait) solid var(--color-graphite);
+  background: var(--color-birch-light);
+  box-shadow:
+    0 1px 0 var(--color-rule-faint),
+    6px 6px 0 var(--color-rule-faint);
+}
+
+.sommaire ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sommaire li {
+  border-top: 1px solid var(--color-rule-faint);
+}
+
+.sommaire li:first-child {
+  border-top: 0;
+}
+
+.sommaire a,
+.sommaire .bientot {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: var(--space-1) 0;
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.sommaire .numero,
+.sommaire .etat {
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.sommaire a[aria-current] {
+  color: var(--color-graphite);
+}
+
+.sommaire a[aria-current] .etat::before {
+  content: "◆ ";
+  color: var(--color-blued);
+}
+
+.sommaire .bientot {
+  color: var(--color-graphite-soft);
+}
+
+/* ---------- Cartouche : horaires, adresse, Instagram ---------- */
+.cartouche {
+  margin: 0 var(--gouttiere) var(--space-8);
+  border: 2px solid var(--color-graphite);
+  background: var(--color-birch-light);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  line-height: 1.4;
+}
+
+.cartouche-etat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3rem;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--trait) solid var(--color-graphite);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+/* Témoin : lampe éteinte (contour) ou allumée (sodium), toujours doublé du texte. */
+.cartouche-etat::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.9rem;
+  height: 0.9rem;
+  border: 2px solid var(--color-graphite);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.cartouche-etat[data-ouvert="true"] {
+  background: var(--color-sodium);
+}
+
+.cartouche-etat[data-ouvert="true"]::before {
+  background: var(--color-graphite);
+}
+
+.cartouche dl {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  margin: 0;
+}
+
+.cartouche dt,
+.cartouche dd {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--color-graphite);
+}
+
+.cartouche dt {
+  border-right: 1px solid var(--color-graphite);
+  color: var(--color-graphite-soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.cartouche dd {
+  font-weight: 500;
+}
+
+.cartouche dd a {
+  display: inline-block;
+  min-height: 1.75rem;
+  font-weight: 600;
+}
+
+.cartouche-pied {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cartouche-pied li {
+  padding: var(--space-1) var(--space-3);
+  border-left: 1px solid var(--color-graphite);
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.cartouche-pied li:first-child {
+  border-left: 0;
+}
+
+.cartouche-pied b {
+  display: block;
+  color: var(--color-graphite-soft);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ---------- Planche ---------- */
+.planche {
+  padding: 0 var(--gouttiere) var(--space-16);
+}
+
+.section {
+  margin-top: var(--space-16);
+  scroll-margin-top: var(--space-8);
+}
+
+.titre-planche {
+  font-size: var(--step-4);
+  line-height: 0.88;
+  letter-spacing: -0.005em;
+}
+
+.chapeau {
+  margin-top: var(--space-6);
+  font-size: var(--step-1);
+  line-height: 1.5;
+}
+
+/* Ligne de cote : une flèche à chaque bout, la valeur au milieu. */
+.cote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+  color: var(--color-graphite);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.cote::before,
+.cote::after {
+  content: "";
+  flex: 1 1 0;
+  min-width: 1.5rem;
+  height: 0.75rem;
+  background:
+    linear-gradient(currentcolor, currentcolor) center / 100% var(--trait)
+      no-repeat,
+    linear-gradient(currentcolor, currentcolor) left center / var(--trait) 100%
+      no-repeat;
+}
+
+.cote::after {
+  background:
+    linear-gradient(currentcolor, currentcolor) center / 100% var(--trait)
+      no-repeat,
+    linear-gradient(currentcolor, currentcolor) right center / var(--trait) 100%
+      no-repeat;
+}
+
+.cote span {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+/* Cote verticale (ex. âges des membres) */
+.cote-v {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  gap: var(--space-2);
+  min-height: 12rem;
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cote-v-trait {
+  width: 0.75rem;
+  background:
+    linear-gradient(currentcolor, currentcolor) center / var(--trait) 100%
+      no-repeat,
+    linear-gradient(currentcolor, currentcolor) top / 100% var(--trait)
+      no-repeat,
+    linear-gradient(currentcolor, currentcolor) bottom / 100% var(--trait)
+      no-repeat;
+}
+
+/* Vue : photo encadrée, coins repérés, légende en annotation. */
+.vue {
+  position: relative;
+  margin: var(--space-8) 0;
+}
+
+.vue-cadre {
+  position: relative;
+  padding: var(--space-2);
+  border: var(--trait) solid var(--color-graphite);
+  background: var(--color-birch-light);
+}
+
+.vue-cadre::before,
+.vue-cadre::after {
+  content: "";
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 0 solid var(--color-blued);
+}
+
+.vue-cadre::before {
+  top: -0.6rem;
+  left: -0.6rem;
+  border-top-width: 3px;
+  border-left-width: 3px;
+}
+
+.vue-cadre::after {
+  right: -0.6rem;
+  bottom: -0.6rem;
+  border-right-width: 3px;
+  border-bottom-width: 3px;
+}
+
+.vue img {
+  width: 100%;
+}
+
+.vue figcaption {
+  margin-top: var(--space-3);
+  color: var(--color-graphite-soft);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  line-height: 1.45;
+}
+
+.vue figcaption p {
+  margin: 0;
+}
+
+.vue figcaption p > b {
+  margin-right: var(--space-2);
+  color: var(--color-blued);
+  font-weight: 600;
+}
+
+/* Repères posés sur une photo, et leur légende. */
+.reperes {
+  position: absolute;
+  inset: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.reperes li {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 2px solid var(--color-graphite);
+  border-radius: 50%;
+  background: var(--color-sodium);
+  color: var(--color-graphite);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  transform: translate(-50%, -50%);
+}
+
+.legende {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+}
+
+.legende b {
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: var(--space-1);
+  border: 1.5px solid var(--color-graphite);
+  border-radius: 50%;
+  background: var(--color-sodium);
+  font-size: 0.75rem;
+}
+
+/* Note de révision (annonce de réouverture). */
+.revision {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3) var(--space-4);
+  margin-top: var(--space-8);
+  padding: var(--space-4);
+  border: var(--trait) solid var(--color-blued);
+  background: var(--color-birch-light);
+}
+
+.revision-marque {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-blued);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  color: var(--color-birch-light);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-top: 0.9rem;
+}
+
+.revision h2 {
+  font-size: var(--step-2);
+}
+
+.revision-texte {
+  grid-column: 1 / -1;
+}
+
+.revision p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bandeau acier bleui (surfaces fortes) */
+.acier {
+  margin-inline: calc(-1 * var(--gouttiere));
+  padding: var(--space-12) var(--gouttiere);
+  background: var(--color-blued);
+  color: var(--color-birch-light);
+}
+
+.acier h2,
+.acier h3 {
+  color: var(--color-birch-light);
+}
+
+.acier .surtitre {
+  color: var(--color-blued-light);
+}
+
+.acier a {
+  color: var(--color-sodium);
+}
+
+.acier a:hover {
+  color: var(--color-birch-light);
+}
+
+.acier :focus-visible {
+  outline-color: var(--color-sodium);
+}
+
+.acier .a-fournir {
+  color: var(--color-graphite);
+}
+
+/* Coupes dessinées (histoire du nom, bowl) */
+.dessin {
+  margin: var(--space-6) 0 0;
+}
+
+.dessin svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dessin figcaption {
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+}
+
+.trait {
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trait-fin {
+  stroke-width: 1.25;
+}
+
+.trait-tirets {
+  stroke-dasharray: 6 5;
+}
+
+.trait-acier {
+  stroke: var(--color-blued);
+}
+
+.trait-veinage {
+  stroke: var(--color-grain);
+}
+
+.plein-sodium {
+  fill: var(--color-sodium);
+}
+
+.plein-bouleau {
+  fill: var(--color-birch-light);
+}
+
+.plein-acier {
+  fill: var(--color-blued);
+}
+
+.plein-plis {
+  fill: url("#plis");
+}
+
+.svg-annot {
+  fill: currentcolor;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.svg-titre {
+  fill: var(--color-blued);
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Portes d'entrée : nomenclature de la planche (repère, pour qui, quoi, où). */
+.nomenclature {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  border-top: 2px solid var(--color-graphite);
+  list-style: none;
+}
+
+.nomenclature > li {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-graphite);
+}
+
+.nomenclature h3 {
+  font-size: var(--step-2);
+}
+
+.nomenclature p {
+  margin: 0;
+}
+
+.nomenclature ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lien-outil {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 2.75rem;
+  padding: var(--space-1) var(--space-3);
+  border: var(--trait) solid var(--color-blued);
+  background: var(--color-birch-light);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color var(--duree-court) var(--ease-out),
+    color var(--duree-court) var(--ease-out);
+}
+
+.lien-outil:hover {
+  background: var(--color-blued);
+  color: var(--color-birch-light);
+}
+
+.lien-outil-bientot {
+  border-style: dashed;
+  border-color: var(--color-graphite-soft);
+  background: transparent;
+  color: var(--color-graphite-soft);
+}
+
+.lien-outil-fort {
+  background: var(--color-blued);
+  color: var(--color-birch-light);
+}
+
+.lien-outil-fort:hover {
+  background: var(--color-blued-strong);
+}
+
+/* Cadre vidéo vide : la croix de l'architecte = « à venir ». */
+.video-vide {
+  position: relative;
+  max-width: 52rem;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  margin: var(--space-6) 0 0;
+  border: var(--trait) solid var(--color-graphite);
+  background:
+    linear-gradient(
+      to top right,
+      transparent calc(50% - 0.5px),
+      var(--color-rule) 50%,
+      transparent calc(50% + 0.5px)
+    ),
+    linear-gradient(
+      to bottom right,
+      transparent calc(50% - 0.5px),
+      var(--color-rule) 50%,
+      transparent calc(50% + 0.5px)
+    ),
+    var(--color-birch-light);
+}
+
+.video-vide p {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-birch-light);
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  text-align: center;
+}
+
+/* Liste de chantiers (nouveautés à fournir) */
+.chantiers {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chantiers li {
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--color-blued-light);
+}
+
+.chantiers h3 {
+  font-size: var(--step-2);
+}
+
+.chantiers p {
+  margin: var(--space-2) 0 0;
+}
+
+/* Pied de planche */
+.pied {
+  padding: var(--space-12) var(--gouttiere) var(--space-16);
+  border-top: 2px solid var(--color-graphite);
+  background: var(--color-birch-deep);
+}
+
+.pied-grille {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.pied h2 {
+  margin-bottom: var(--space-3);
+  font-size: var(--step-1);
+  line-height: 1.1;
+}
+
+.pied p,
+.pied ul {
+  margin: 0 0 var(--space-2);
+  font-size: 0.9375rem;
+}
+
+.pied ul {
+  padding: 0;
+  list-style: none;
+}
+
+.pied li {
+  margin-bottom: var(--space-1);
+}
+
+.pied li a {
+  display: inline-block;
+  min-height: 1.75rem;
+}
+
+.pied-logo img {
+  width: min(100%, 16rem);
+  height: auto;
+}
+
+.pied .annot {
+  color: var(--color-graphite-soft);
+}
+
+/* ---------- Accueil ---------- */
+.ouverture {
+  padding-top: var(--space-4);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Positions des repères sur la vue 1 (en % de la photo). */
+.r-courbe {
+  top: 58%;
+  left: 13%;
+}
+
+.r-poteau {
+  top: 30%;
+  left: 44%;
+}
+
+.r-module {
+  top: 37%;
+  left: 60%;
+}
+
+.r-rampe {
+  top: 44%;
+  left: 74%;
+}
+
+.association-grille,
+.nom-grille {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+}
+
+.association-grille .cote-v {
+  display: none;
+}
+
+.association-photo {
+  margin: 0;
+}
+
+.nom-coupes {
+  color: var(--color-graphite);
+}
+
+.bowl-annonce {
+  padding: var(--space-8) 0;
+  border-top: 2px solid var(--color-graphite);
+  border-bottom: 2px solid var(--color-graphite);
+}
+
+/* ---------- Infos pratiques ---------- */
+.etat-ligne {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-6) 0 var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-graphite);
+  background: var(--color-birch-light);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.etat-ligne[data-ouvert="true"] {
+  background: var(--color-sodium);
+}
+
+/* Semaine : un tableau réel, dont la dernière colonne dessine la plage horaire. */
+.semaine {
+  width: 100%;
+  max-width: 52rem;
+  margin-bottom: var(--space-4);
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+}
+
+.semaine th,
+.semaine td {
+  padding: var(--space-2) var(--space-2) var(--space-2) 0;
+  border-bottom: 1px solid var(--color-rule);
+  text-align: left;
+  font-weight: 500;
+}
+
+.semaine thead th {
+  color: var(--color-graphite-soft);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.semaine tbody th {
+  width: 7rem;
+}
+
+.semaine .ouvert {
+  font-weight: 600;
+}
+
+.semaine .ouvert th,
+.semaine .ouvert td {
+  color: var(--color-blued);
+  font-weight: 600;
+}
+
+.semaine-echelle {
+  display: none;
+}
+
+.semaine-barre {
+  display: none;
+  position: relative;
+  width: 55%;
+}
+
+.semaine-barre span {
+  position: absolute;
+  top: 50%;
+  left: 33.33%;
+  width: 33.33%;
+  height: 0.9rem;
+  border: 2px solid var(--color-graphite);
+  background: var(--color-sodium);
+  transform: translateY(-50%);
+}
+
+.fiches {
+  display: grid;
+  gap: var(--space-16);
+}
+
+.fiche h2 {
+  margin-bottom: var(--space-4);
+}
+
+.prix {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-4);
+}
+
+.prix div {
+  min-width: 9rem;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--color-graphite);
+  background: var(--color-birch-light);
+}
+
+.prix dt {
+  font-family: var(--font-mono);
+  font-size: var(--step-moins-1);
+  text-transform: uppercase;
+}
+
+.prix dd {
+  margin: 0;
+  color: var(--color-blued);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.acces-grille {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-6);
+}
+
+.acces-grille h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--step-1);
+}
+
+.archive {
+  padding: var(--space-6);
+  border: var(--trait) dashed var(--color-graphite-soft);
+}
+
+/* ---------- Tablette ---------- */
+@media (width >= 48rem) {
+  :root {
+    --gouttiere: var(--space-8);
+  }
+
+  .entete-logo img {
+    height: 3.25rem;
+  }
+
+  .cartouche {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .cartouche-etat {
+    grid-column: 1 / -1;
+  }
+
+  .cartouche dl {
+    grid-column: 1 / -1;
+    grid-template-columns: 7rem 1fr 7rem 1fr;
+  }
+
+  .cartouche-pied {
+    grid-column: 1 / -1;
+  }
+
+  .nomenclature > li {
+    grid-template-columns: 12rem 1fr;
+    column-gap: var(--space-8);
+  }
+
+  .nomenclature > li > :not(h3) {
+    grid-column: 2;
+  }
+
+  .nomenclature h3 {
+    grid-row: 1 / span 3;
+  }
+
+  .pied-grille {
+    grid-template-columns: 1.2fr 1fr 1fr;
+  }
+
+  .association-grille {
+    grid-template-columns: minmax(0, 1.1fr) auto minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .association-grille .cote-v {
+    display: grid;
+    align-self: stretch;
+  }
+
+  .nom-grille {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+
+  .semaine-echelle {
+    display: table-cell;
+  }
+
+  .semaine-echelle span {
+    display: inline-block;
+    width: 33.33%;
+    margin-left: -1ch;
+  }
+
+  .semaine-echelle span:first-child {
+    margin-left: 0;
+  }
+
+  .semaine-echelle span:last-child {
+    width: auto;
+  }
+
+  .semaine-barre {
+    display: table-cell;
+    background: repeating-linear-gradient(
+      to right,
+      var(--color-rule-faint) 0 1px,
+      transparent 1px 33.33%
+    );
+  }
+
+  .fiches {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  .acces-grille {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Grand écran : cartouche fixe en bas à droite, comme sur un plan ---------- */
+@media (width >= 75rem) {
+  :root {
+    --gouttiere: var(--space-12);
+  }
+
+  .feuille {
+    padding-right: calc(var(--cartouche-largeur) + var(--space-12));
+  }
+
+  .cartouche {
+    position: fixed;
+    right: var(--space-6);
+    bottom: var(--space-6);
+    z-index: 10;
+    display: block;
+    width: var(--cartouche-largeur);
+    margin: 0;
+    box-shadow: 8px 8px 0 var(--color-rule-faint);
+  }
+
+  .cartouche dl {
+    grid-template-columns: 6.5rem 1fr;
+  }
+
+  .sommaire nav {
+    left: auto;
+    width: 26rem;
+  }
+
+  .planche {
+    max-width: 68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Coupes du nom : annotations agrandies pour rester lisibles à 390 px. */
+.nom-coupes .svg-annot {
+  font-size: 19px;
+}
