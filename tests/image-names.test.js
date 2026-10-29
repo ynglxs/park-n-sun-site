@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { imageSlug, isExcluded } from "../scripts/image-names.js";
+import {
+  imageSlug,
+  isExcluded,
+  isImage,
+  slugsUniques,
+} from "../scripts/image-names.js";
 
 describe("imageSlug", () => {
   it("retire le préfixe WordPress et garde l'année et le mois", () => {
@@ -27,5 +32,22 @@ describe("isExcluded", () => {
     expect(isExcluded("wp-content__uploads__2026__04__IMG_9630.jpg")).toBe(
       false,
     );
+  });
+});
+
+describe("isImage", () => {
+  it("ne garde que les fichiers image", () => {
+    expect(isImage("photo.JPG")).toBe(true);
+    expect(isImage("notes.txt")).toBe(false);
+  });
+});
+
+describe("slugsUniques", () => {
+  it("échoue si deux sources donnent le même nom", () => {
+    expect(() => slugsUniques(["a b.jpg", "a-b.png"])).toThrow(/double/);
+  });
+
+  it("associe chaque nom court à sa source", () => {
+    expect(slugsUniques(["x.jpg", "y.png"]).get("y")).toBe("y.png");
   });
 });

@@ -5,7 +5,7 @@
 import { mkdir, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
-import { imageSlug, isExcluded } from "./image-names.js";
+import { isExcluded, isImage, slugsUniques } from "./image-names.js";
 
 const WIDTHS = [640, 1280];
 const src = process.argv[2];
@@ -17,9 +17,12 @@ if (!src) {
 const out = "mockups/shared/img";
 await mkdir(out, { recursive: true });
 const manifest = {};
-for (const file of (await readdir(src)).sort()) {
-  if (isExcluded(file)) continue;
-  const slug = imageSlug(file);
+const entries = await readdir(src, { withFileTypes: true });
+const files = entries
+  .filter((e) => e.isFile() && isImage(e.name) && !isExcluded(e.name))
+  .map((e) => e.name)
+  .sort();
+for (const [slug, file] of slugsUniques(files)) {
   const image = sharp(join(src, file));
   const { width, height } = await image.metadata();
   manifest[slug] = { source: file, width, height, sizes: {} };
