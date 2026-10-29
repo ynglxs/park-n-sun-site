@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 300" role="img" aria-labelledby="t d">
+  <title id="t">Esquisse du logo C : Park N' Sun</title>
+  <desc id="d">Le nom PARK N' SUN en capitales étroites, au-dessus d'une coupe de bowl dessinée en couches de contreplaqué ; la margelle sert d'horizon à un soleil levant.</desc>
+  <!-- Esquisse de direction, pas un fichier final. Couleurs : bouleau, acier bleui, lampe au sodium (tokens OKLCH de docs/directions.md, hex ici car SVG autonome). -->
+  <rect width="480" height="300" fill="#ece0c8"/>
+  <!-- Soleil (la lampe disparue) qui se lève derrière la courbe -->
+  <clipPath id="horizon"><rect x="0" y="0" width="480" height="146"/></clipPath>
+  <circle cx="240" cy="150" r="62" fill="#f1b73a" clip-path="url(#horizon)"/>
+  <!-- Couches de contreplaqué : bowl vu en coupe -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M110 150 A130 130 0 0 0 240 280" stroke="#22314f" stroke-width="10"/>
+    <path d="M124 150 A116 116 0 0 0 240 266" stroke="#9c7a4f" stroke-width="6"/>
+    <path d="M136 150 A104 104 0 0 0 240 254" stroke="#22314f" stroke-width="6"/>
+    <path d="M148 150 A92 92 0 0 0 240 242" stroke="#9c7a4f" stroke-width="6"/>
+    <path d="M370 150 A130 130 0 0 1 240 280" stroke="#22314f" stroke-width="10"/>
+    <path d="M356 150 A116 116 0 0 1 240 266" stroke="#9c7a4f" stroke-width="6"/>
+    <path d="M344 150 A104 104 0 0 1 240 254" stroke="#22314f" stroke-width="6"/>
+    <path d="M332 150 A92 92 0 0 1 240 242" stroke="#9c7a4f" stroke-width="6"/>
+  </g>
+  <!-- Margelle = horizon -->
+  <rect x="90" y="144" width="300" height="10" rx="5" fill="#22314f"/>
+  <text x="240" y="62" text-anchor="middle" font-family="'Big Shoulders Display', 'Arial Narrow', sans-serif" font-weight="800" font-size="56" letter-spacing="2" fill="#22314f">PARK N' SUN</text>
+</svg>
