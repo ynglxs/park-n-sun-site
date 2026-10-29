@@ -1,9 +1,20 @@
 # Analyse des skills frontend-design-pro
 
 Pack installé le 2026-10-29 avec `npx skills add Krishna-Modi12/frontend-design-pro`
-(un seul skill routeur, sans `--full-depth`). Le pack lui-même n'est pas versionné
-(11 Mo, 638 fichiers). `skills-lock.json` fixe la version, et
-`npx skills experimental_install` le réinstalle dans `.claude/skills/`.
+(un seul skill routeur, sans `--full-depth`), CLI `skills` 1.7.4. Version auditée :
+commit `8ff612f36fe5166c87d40bbe7790ca34e8d319f5` (pack v15.0.0, dernier commit du
+2026-10-20), hash `cc5702dc…7ee4` noté dans `skills-lock.json`.
+
+Le pack lui-même n'est pas versionné (11 Mo, 638 fichiers). Pour le réinstaller à
+l'identique dans `.claude/skills/` :
+
+```bash
+npx skills@1.7.4 add https://github.com/Krishna-Modi12/frontend-design-pro/tree/8ff612f36fe5166c87d40bbe7790ca34e8d319f5 -a claude-code -y --copy
+```
+
+Attention : `npx skills experimental_install` installe dans `.agents/skills/`, pas pour
+Claude Code. Ne pas l'utiliser ici. Après réinstallation, vérifier que `skills-lock.json`
+garde le même `ref` et le même `computedHash`.
 
 Lu : `SKILL.md` racine (mur anti-slop, table de routage, protocole de chargement),
 `core/user-intake.md`, `core/validate-checklist.md`, et la description de chacun des 19
@@ -74,6 +85,8 @@ néon » du prompt.
 - Le pack contient son propre `CLAUDE.md`, des hooks Git (`.githooks/`), `setup.sh` et
   des workflows. Rien n'a été exécuté : seuls les fichiers Markdown de règles sont lus.
 - Recherche de consignes d'injection (`curl | sh`, « ignore previous », exfiltration,
-  clés) : aucune trouvée. Les mentions de clés API sont des exemples de documentation.
+  clés) dans les fichiers Markdown, shell et JSON : aucune trouvée. Les mentions de clés
+  API sont des exemples de documentation. C'est un contrôle ciblé, **pas un audit
+  complet** des 638 fichiers. Seuls les fichiers de règles lus ci-dessus guident le travail.
 - `.impeccable/config.json` est la configuration de développement du pack lui-même. Le
   skill Impeccable n'est **ni installé ni activé**, comme le demande `CLAUDE.md`.
