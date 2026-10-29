@@ -1,0 +1,8 @@
+node_modules/
+screenshots/
+playwright-report/
+test-results/
+.omc/
+package-lock.json
+CLAUDE.md
+docs/prompts/
