@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
   appareilModeste,
+  creerGardeChargement,
   decisionChargement,
+  doitAbandonner,
   dprPlafonne,
   lireSignaux,
   supporteWebGL,
@@ -134,6 +136,42 @@ describe("URL_THREE", () => {
   it("épingle une version exacte sur un CDN autorisé", () => {
     expect(URL_THREE).toMatch(
       /^https:\/\/cdn\.jsdelivr\.net\/npm\/three@\d+\.\d+\.\d+\//,
+    );
+  });
+});
+
+describe("garde de chargement", () => {
+  it("un chargement reste valide tant que rien ne l'annule", () => {
+    const garde = creerGardeChargement();
+    const j = garde.demarrer();
+    expect(garde.valide(j)).toBe(true);
+  });
+
+  it("mouvement réduit activé pendant le chargement : le jeton n'est plus valide", () => {
+    const garde = creerGardeChargement();
+    const j = garde.demarrer();
+    // l'utilisateur active la réduction des animations pendant les imports → retour à la coupe
+    garde.annuler();
+    expect(garde.valide(j)).toBe(false);
+    expect(
+      doitAbandonner({ jetonValide: garde.valide(j), reduitMouvement: true }),
+    ).toBe(true);
+  });
+
+  it("un nouveau chargement invalide l'ancien", () => {
+    const garde = creerGardeChargement();
+    const ancien = garde.demarrer();
+    const nouveau = garde.demarrer();
+    expect(garde.valide(ancien)).toBe(false);
+    expect(garde.valide(nouveau)).toBe(true);
+  });
+
+  it("abandonne si le mouvement réduit est demandé, même avec un jeton valide", () => {
+    expect(doitAbandonner({ jetonValide: true, reduitMouvement: true })).toBe(
+      true,
+    );
+    expect(doitAbandonner({ jetonValide: true, reduitMouvement: false })).toBe(
+      false,
     );
   });
 });

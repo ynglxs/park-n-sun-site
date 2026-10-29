@@ -67,3 +67,24 @@ export function lireSignaux(win) {
 export function dprPlafonne(dpr, plafond = 2) {
   return Math.min(plafond, Math.max(1, Number(dpr) || 1));
 }
+
+// Garde contre les chargements devenus obsolètes : chaque chargement prend un jeton ;
+// revenir à la coupe statique (mouvement réduit activé, page quittée…) invalide les
+// jetons en cours, et le chargement s'arrête à sa prochaine étape au lieu d'activer
+// la 3D malgré tout.
+export function creerGardeChargement() {
+  let jeton = 0;
+  return {
+    demarrer: () => ++jeton,
+    annuler: () => {
+      jeton++;
+    },
+    valide: (j) => j === jeton,
+  };
+}
+
+// Un chargement doit s'arrêter si son jeton n'est plus valide ou si le mouvement
+// réduit est désormais demandé.
+export function doitAbandonner({ jetonValide, reduitMouvement }) {
+  return !jetonValide || reduitMouvement;
+}

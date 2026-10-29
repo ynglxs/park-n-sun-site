@@ -1,7 +1,9 @@
 // Planche 03 : chargement à la demande de la maquette 3D du bowl, et liaison avec le
 // défilement. La décision est dans chargement-3d.js, les calculs dans courbe.js (testés).
 import {
+  creerGardeChargement,
   decisionChargement,
+  doitAbandonner,
   dprPlafonne,
   lireSignaux,
   URL_THREE,
@@ -23,6 +25,7 @@ if (section) {
   let instance = null;
   let canvas = null;
   let enCours = false;
+  const garde = creerGardeChargement();
   const nettoyages = [];
 
   const mode = (m) => (section.dataset.mode = m);
@@ -52,6 +55,7 @@ if (section) {
   }
 
   function liberer() {
+    garde.annuler();
     for (const f of nettoyages.splice(0)) f();
     instance?.liberer();
     instance = null;
@@ -66,6 +70,20 @@ if (section) {
   }
 
   async function charger() {
+    const jeton = garde.demarrer();
+    // Après chaque attente, la situation a pu changer (mouvement réduit activé,
+    // retour à la coupe) : on vérifie avant de continuer.
+    const abandonner = () => {
+      if (
+        !doitAbandonner({
+          jetonValide: garde.valide(jeton),
+          reduitMouvement: mouvement.matches,
+        })
+      )
+        return false;
+      if (garde.valide(jeton)) passerEnStatique();
+      return true;
+    };
     enCours = true;
     mode("chargement");
     bouton.disabled = true;
@@ -76,10 +94,12 @@ if (section) {
         import(URL_THREE),
         import("./bowl-scene.js"),
       ]);
+      if (abandonner()) return;
       // Les textes posés sur les parois sont dessinés avec la fonte de titrage.
       await document.fonts
         .load('800 100px "Big Shoulders Display"')
         .catch(() => {});
+      if (abandonner()) return;
       canvas = document.createElement("canvas");
       canvas.setAttribute("aria-hidden", "true");
       scene.prepend(canvas);
