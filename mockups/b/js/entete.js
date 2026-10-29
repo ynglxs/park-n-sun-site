@@ -45,6 +45,7 @@ function brancherMenu(bouton) {
 for (const liste of document.querySelectorAll("[data-langues]")) {
   afficherLangues(liste);
 }
+document.documentElement.classList.add("js-menu");
 for (const bouton of document.querySelectorAll(".menu-bouton")) {
   brancherMenu(bouton);
 }
