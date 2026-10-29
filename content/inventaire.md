@@ -1,6 +1,6 @@
 # Inventaire du site actuel http://www.park-n-sun.ch/
 
-Date de récupération : 2026-10-29. Récupération par `curl` des pages HTML (copies brutes dans `inv-raw/`), puis extraction automatique du texte. Texte repris tel quel (non corrigé, non réécrit) ; la mise en forme gras/italique est approximative. Les pages ont toutes répondu en HTTP 200. Il n'existe ni `sitemap.xml` ni `robots.txt` (404) : les pages ont été découvertes via la navigation, le pied de page, la barre latérale « articles récents » et les liens internes.
+Date de récupération : 2026-10-29. Récupération par `curl` des pages HTML (copies brutes dans `inv-raw/`, conservées hors du repo dans `~/park-n-sun-archives/inv-raw/` du conteneur agents, non versionnées), puis extraction automatique du texte. Texte repris tel quel (non corrigé, non réécrit) ; la mise en forme gras/italique est approximative. Les pages ont toutes répondu en HTTP 200. Il n'existe ni `sitemap.xml` ni `robots.txt` (404) : les pages ont été découvertes via la navigation, le pied de page, la barre latérale « articles récents » et les liens internes.
 
 Les images sont listées avec leur URL absolue telle que servie par le site (certaines pointent vers l'ancien hôte `nmzdplt.cluster031.hosting.ovh.net`). Les liens « image cliquable vers » indiquent le lien englobant l'image.
 

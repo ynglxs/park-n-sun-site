@@ -8,11 +8,12 @@ Proposition basée sur l'inventaire du site actuel (`inventaire.md`, récupéré
 - Trois langues : FR (langue source), EN, DE.
 - Horaires, adresse et Instagram sont accessibles depuis toutes les pages (voir section 4).
 - Les emplacements vidéo sont des blocs clairement marqués `[À FOURNIR : vidéo de Léo]`.
+- Accessibilité : chaque photo informative reçoit un texte alternatif rédigé (les `alt` de l'ancien site sont souvent vides), chaque image cliquable un nom accessible, chaque vidéo des sous-titres et une transcription `[À FOURNIR : sous-titres FR/EN/DE]`.
 - Chaque public a une porte d'entrée sur l'accueil (voir section 5).
 
 ## 2. Schéma d'URL et langues
 
-- FR (source) : `/` puis `/le-skatepark/`, `/horaires-et-infos/`, etc.
+- FR (source) : `/` puis `/le-park/le-skatepark/`, `/horaires-et-infos/`, etc.
 - EN : préfixe `/en/` (ex. `/en/the-skatepark/`).
 - DE : préfixe `/de/` (ex. `/de/der-skatepark/`).
 - Les segments d'URL sont traduits ; chaque page porte les liens `hreflang` vers ses deux autres versions.
@@ -143,8 +144,8 @@ Remarques sur l'arbre :
 
 - But : expliquer la rénovation aux membres, à la Ville et aux partenaires ; présenter le park rénové.
 - Sources : Projet de rénovation (2), Accueil (1) pour la réouverture, Infos pratiques (5) pour les dons.
-- Contenu : texte actuel mis à jour au passé (la rénovation est terminée selon l'Accueil), plans 3D (`FuturParkLegendes`, `FuturPark2`, `FuturPark`, `AnciensAbbatoirs`), mise en conformité par la Ville, espace de 400 m2.
-- Manque : `[À FOURNIR : dates de début et de fin des travaux, coût et financement, remerciements]`, `[À FOURNIR : photos avant/après]`, `[À FOURNIR : vidéo du chantier]`.
+- Contenu : texte actuel du projet conservé tel quel, présenté comme le projet initial (sans le transformer en réalisations : l'Accueil annonce la réouverture, mais ne confirme pas chaque aménagement), plans 3D (`FuturParkLegendes`, `FuturPark2`, `FuturPark`, `AnciensAbbatoirs`), mise en conformité par la Ville, espace de 400 m2.
+- Manque : `[À FOURNIR : bilan des travaux réellement réalisés, validé par Léo]`, `[À FOURNIR : dates de début et de fin des travaux, coût et financement, remerciements]`, `[À FOURNIR : photos avant/après]`, `[À FOURNIR : vidéo du chantier]`.
 - À décider : conserver l'appel aux dons (voir questions).
 
 ### 6.9 Capitale culturelle 2027 `/renovation/capitale-culturelle-2027/` (nouveau)
@@ -277,7 +278,7 @@ Regroupées, avec ma recommandation.
 2. **Instagram** : l'Accueil renvoie vers https://www.instagram.com/park_n_sun_/ (identique aux règles) mais Infos pratiques renvoie vers https://www.instagram.com/park_n_sun/?hl=fr (compte différent). Recommandation : garder uniquement `park_n_sun_`, et confirmer que `park_n_sun` n'est pas un second compte à garder.
 3. **Matériaux** : le site actuel écrit que « les premières installations ont été construites avec des matériaux de récupération » (page Le skatepark), alors que les règles du projet disent « pas récup ». Recommandation : reprendre la phrase dans l'Historique (c'est un fait historique) et décrire le park actuel comme construit à la main en bois, à valider avec toi.
 4. **Béton** : la page Le bowl cite des « margelles en béton », alors que les règles disent « pas de béton ». Recommandation : garder la phrase dans l'hommage au bowl (fait historique) et préciser « margelles en béton » comme seule exception.
-5. **Bowl au présent** : la page Le skatepark parle encore du bowl au présent et la page rénovation parle d'intégrer des parties du bowl au skatepark, tandis que la page Le bowl annonce « définitivement fermé ». Recommandation : tout mettre au passé et préciser quelles parties du bowl ont été réutilisées. `[À FOURNIR : réponse de Léo]`.
+5. **Bowl au présent** : la page Le skatepark parle encore du bowl au présent et la page rénovation parle d'intégrer des parties du bowl au skatepark, tandis que la page Le bowl annonce « définitivement fermé ». Recommandation : mettre au passé uniquement ce qui est confirmé (le bowl est fermé) et marquer le reste `[À FOURNIR : parties du bowl réellement réutilisées]`. `[À FOURNIR : réponse de Léo]`.
 6. **Téléphone** : le pied de page affiche « +(41) 78 949 12 32 » mais le lien `tel:` pointe vers un autre numéro (`+(15) 718-999-3939`, valeur par défaut du thème). Recommandation : utiliser +41 78 949 12 32 après confirmation que ce numéro est toujours celui de Gabriel Griesser.
 7. **Contact** : le site actuel n'affiche que Gabriel Griesser (adresse hotmail). Recommandation : afficher aussi ton contact (porte-parole) dès que tu fournis `[EMAIL/TÉL de Léo]`.
 
