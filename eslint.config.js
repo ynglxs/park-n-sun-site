@@ -9,6 +9,7 @@ export default [
       "playwright-report/",
       "test-results/",
       ".omc/",
+      ".claude/skills/",
     ],
   },
   js.configs.recommended,

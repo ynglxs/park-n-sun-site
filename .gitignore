@@ -10,3 +10,6 @@ test-results/
 .env.*
 .omc/*
 !.omc/skills/
+
+# Skills installés via skills-lock.json (npx skills experimental_install)
+.claude/skills/

@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design-pro": {
+      "source": "Krishna-Modi12/frontend-design-pro",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "cc5702dcd3815784ffba5bff4fd60df8f8fd10a008c51a480959df35374e7ee4"
+    }
+  }
+}
