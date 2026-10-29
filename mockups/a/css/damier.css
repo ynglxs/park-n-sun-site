@@ -816,8 +816,9 @@ a:hover {
   color: var(--color-surface);
 }
 
+/* Jour fermé : distingué par la bordure en tirets et l'absence de remplissage,
+   jamais par l'opacité (qui ferait passer le texte sous 4.5:1). */
 .jour-ferme {
-  opacity: 0.75;
   border-style: dashed;
   border-width: 1px;
 }

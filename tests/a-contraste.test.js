@@ -80,3 +80,11 @@ describe("contraste non textuel (≥ 3:1)", () => {
     expect(contraste(a, b)).toBeGreaterThanOrEqual(3);
   });
 });
+
+describe("pas d'opacité sur du texte", () => {
+  // L'opacité réduit le contraste réel du texte sans que les tokens le montrent
+  // (relecture Codex : jours fermés à 3,48:1).
+  it("aucune règle ne baisse l'opacité", () => {
+    expect(css).not.toMatch(/opacity:\s*0?\.\d/);
+  });
+});
