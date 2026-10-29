@@ -12,7 +12,8 @@
     "lint:format": "prettier --check .",
     "format": "prettier --write .",
     "test": "vitest run",
-    "screenshots": "node scripts/screenshots.js"
+    "screenshots": "node scripts/screenshots.js",
+    "images": "node scripts/images.js"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
@@ -21,6 +22,7 @@
     "html-validate": "^11.17.0",
     "playwright": "^1.64.1",
     "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
     "stylelint": "^17.16.0",
     "stylelint-config-standard": "^40.0.0",
     "vitest": "^5.0.5"
